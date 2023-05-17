@@ -1,10 +1,11 @@
 import React from 'react';
-import 'src/app/App.css';
+import {LeftSidebar} from "../features/leftSidebar/LeftSidebar";
 
-export const App = () =>{
-  return (
-    <div className="App">
 
-    </div>
-  );
+export const App = () => {
+    return (
+        <div className="App">
+            <LeftSidebar/>
+        </div>
+    );
 }
