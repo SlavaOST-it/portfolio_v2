@@ -18,6 +18,12 @@ export const GlobalStyled = createGlobalStyle`
   ul li {
     list-style: none;
   }
+  
+  button{
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 400;
+  }
 
   body {
     background-color: ${theme.colors.background};
