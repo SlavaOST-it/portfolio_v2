@@ -1,7 +1,7 @@
-import React, {FC} from 'react';
+import React from 'react';
 
 import avatar from "../../assets/images/me.jpg"
-import sprite from "../../assets/icons/sptite.svg"
+import sprite from "../../assets/icons/sprite.svg"
 
 import {Button} from "../../common/components/button/Button";
 import {Avatar, Description, Header, SocialLinksStyled, Wrapper} from './LeftSidebar.styled';
@@ -24,7 +24,6 @@ export const LeftSidebar = () => {
             </Description>
 
             <SocialLinks/>
-
 
             <Button>HIRE ME!</Button>
         </Wrapper>
