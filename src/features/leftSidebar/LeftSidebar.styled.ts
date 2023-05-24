@@ -1,25 +1,7 @@
 import styled from "styled-components";
 import {theme} from "../../common/styles/Theme.styled";
 
-export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 
-  width: 100%;
-  max-width: 350px;
-  padding: 30px;
-
-  border-radius: 30px;
-  border: 1px solid #565656;
-
-  position: fixed;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-
-  z-index: 10;
-`
 
 export const Header = styled.header`
   display: flex;
@@ -76,9 +58,7 @@ export const Description = styled.section`
 `
 
 
-export const SocialLinksStyled = styled.section`
-
-  
+export const SocialLinksStyled = styled.section`  
   margin-bottom: 30px;
   
   ul{
@@ -88,19 +68,24 @@ export const SocialLinksStyled = styled.section`
     gap: 8px;
   }
   li {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   li a {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
     width: 50px;
     height: 50px;
     line-height: 46px;
     text-align: center;
-    
+
     border: 2px solid ${theme.colors.secondary};
     border-radius: 50%;
- 
+
     transition: .3s;
   }
 
@@ -121,4 +106,24 @@ export const SocialLinksStyled = styled.section`
     transition: .3s;
   }
   
+`
+
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 350px;
+  padding: 30px;
+
+  border-radius: 30px;
+  border: 1px solid #565656;
+
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  z-index: 10;
 `

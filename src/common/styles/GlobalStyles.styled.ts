@@ -24,6 +24,10 @@ export const GlobalStyled = createGlobalStyle`
     line-height: 1.7;
     font-weight: 400;
   }
+  
+  p{
+    color: ${theme.colors.secondary};
+  }
 
   body {
     background-color: ${theme.colors.background};
@@ -31,6 +35,7 @@ export const GlobalStyled = createGlobalStyle`
     color: ${theme.colors.baseColor};
     font-family: 'Inter', sans-serif;
     font-size: 16px;
+    line-height: 1.7;
     height: 100vh;
   }
 `
