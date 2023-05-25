@@ -30,14 +30,14 @@ const NameBlockStyle = styled.div`
   border: 1px solid ${theme.colors.secondary};
   padding: 9px 20px;
   border-radius: 30px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   display: inline-flex;
   align-items: center;
 
 
   svg {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     
     fill: ${theme.colors.baseColor};
     
