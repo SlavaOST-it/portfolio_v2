@@ -24,11 +24,11 @@ export const Header = styled.header`
 export const Avatar = styled.img`
   border-radius: 30px;
 
-  width: 100%;
-  max-width: 250px;
+  max-width: 220px;
+  max-height: 250px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 46px;
+  margin-bottom: 30px;
 `
 
 export const Description = styled.section`
@@ -80,9 +80,7 @@ export const SocialLinksStyled = styled.section`
     
     width: 50px;
     height: 50px;
-    line-height: 46px;
-    text-align: center;
-
+    
     border: 2px solid ${theme.colors.secondary};
     border-radius: 50%;
 
@@ -90,7 +88,7 @@ export const SocialLinksStyled = styled.section`
   }
 
   li:hover a {
-    border: 2px solid ${theme.colors.activeColor.primary_color};
+    border-color: ${theme.colors.activeColor.primary_color};
     transition: .3s;
   }
 
@@ -100,8 +98,8 @@ export const SocialLinksStyled = styled.section`
   }
 
   svg {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     fill: ${theme.colors.secondary};
     transition: .3s;
   }

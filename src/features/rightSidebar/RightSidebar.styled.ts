@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {theme} from "../../common/styles/Theme.styled";
 
-export const Wrapper = styled.ul`
+export const WrapperRightBar = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,6 +23,9 @@ export const Wrapper = styled.ul`
   z-index: 20;
 
   li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 55px;
   }
   
@@ -37,4 +40,11 @@ export const Wrapper = styled.ul`
     fill: ${theme.colors.secondary};
     transition: .3s;
   }
+`
+
+export const NavStyle = styled.nav`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 `
