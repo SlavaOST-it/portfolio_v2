@@ -8,7 +8,7 @@ import {Wrapper} from "../../../common/styles/Wrapper.styled";
 export const About = () => {
     return (
         <Wrapper>
-            <NamePage nameBlock={"ABOUT ME"} svgImg={`${sprite}#user`}/>
+            <NamePage nameBlock={"ABOUT ME"} svgImg={`${sprite}#man`}/>
             <h2>
                 Frontend developer is a <span>creative engineer</span> who combines knowledge of design and programming
             </h2>
