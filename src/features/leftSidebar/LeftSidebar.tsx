@@ -3,7 +3,7 @@ import React from 'react';
 import avatar from "../../assets/images/me.jpg"
 import sprite from "../../assets/icons/sprite.svg"
 
-import {Button} from "../../common/components/button/Button";
+import {ButtonStyle} from "../../common/components/button/Button";
 import {Avatar, Description, Header, SocialLinksStyled, Wrapper} from './LeftSidebar.styled';
 
 
@@ -25,7 +25,7 @@ export const LeftSidebar = () => {
 
             <SocialLinks/>
 
-            <Button>HIRE ME!</Button>
+            <ButtonStyle>HIRE ME!</ButtonStyle>
         </Wrapper>
     );
 };
@@ -33,10 +33,10 @@ export const LeftSidebar = () => {
 
 const SocialLinks = () => {
     const linksSVG = [
-        {title: 'github', link: `${sprite}#github`},
-        {title: 'instagram', link: `${sprite}#instagram`},
-        {title: 'linkedin', link: `${sprite}#linkedin`},
-        {title: 'vk', link: `${sprite}#vk`},
+        {title: 'github', link: `${sprite}#git`, href: ""},
+        {title: 'linkedin', link: `${sprite}#linkedin`, href: ""},
+        {title: 'instagram', link: `${sprite}#instagram`, href: ""},
+        {title: 'vk', link: `${sprite}#vk`, href: ""},
     ]
 
     return (
@@ -44,7 +44,7 @@ const SocialLinks = () => {
             <ul>
                 {linksSVG.map(el =>
                     <li key={el.link}>
-                        <a href={"#"}>
+                        <a href={el.href}>
                             <svg>
                                 <use xlinkHref={el.link}/>
                             </svg>
