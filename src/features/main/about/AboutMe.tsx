@@ -1,17 +1,20 @@
 import React from 'react';
-import {NamePage} from "../../../common/components/nameBlock/NameBlock";
 
 import sprite from "../../../assets/icons/sprite.svg"
-import styled from "styled-components";
-import {Wrapper} from "../../../common/styles/Wrapper.styled";
 
-export const About = () => {
+import {PATH} from "../../../utils/routes/routes";
+import {NamePage} from "../../../common/components/nameBlock/NameBlock";
+import {TitlePage, Wrapper} from "../../../common/styles/Wrapper.styled";
+
+
+export const AboutMe = () => {
     return (
-        <Wrapper>
+        <Wrapper id={PATH.aboutMe}>
             <NamePage nameBlock={"ABOUT ME"} svgImg={`${sprite}#man`}/>
-            <h2>
-                Frontend developer is a <span>creative engineer</span> who combines knowledge of design and programming
-            </h2>
+            <TitlePage>
+                Frontend developer is a <br/>
+                <span>creative engineer</span> who combines knowledge of design and programming
+            </TitlePage>
 
             <p>
                 Hi, I am a front-end developer with
@@ -37,5 +40,3 @@ export const About = () => {
         </Wrapper>
     );
 };
-
-
