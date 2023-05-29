@@ -1,11 +1,11 @@
 import {keyframes} from "styled-components";
 
-export const myAnimation = keyframes`
+
+export const showDescription = keyframes`
   from {
-
+    opacity: 0;
   }
-  
   to {
-
+    opacity: 1;
   }
 `
