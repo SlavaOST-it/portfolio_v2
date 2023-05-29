@@ -1,30 +1,22 @@
 import React from 'react';
+
+import { WrapperMain } from './Main.styled';
+
 import {Home} from "./home/Home";
-import styled from "styled-components";
-import {About} from "./about/About";
 import {Skills} from "./skills/Skills";
-import {Portfolio} from "./portfolio/Portfolio";
+import {AboutMe} from "./about/AboutMe";
 import {Contacts} from "./contacts/Contacts";
+import {Portfolio} from "./portfolio/Portfolio";
+
 
 export const Main = () => {
     return (
-        <Wrapper>
+        <WrapperMain>
             <Home/>
-            <About/>
+            <AboutMe/>
             <Skills/>
             <Portfolio/>
             <Contacts/>
-        </Wrapper>
+        </WrapperMain>
     );
 };
-
-const Wrapper = styled.section`
-  margin-top: 50px;
-  margin-left: 500px;
-  margin-right: 120px;
-
-  height: 100vh;
-  
-  gap: 150px;
-
-`
