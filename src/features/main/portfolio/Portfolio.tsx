@@ -21,8 +21,9 @@ export const Portfolio = () => {
             </TitlePage>
 
             <div>
-                {projects.map(el =>
+                {projects.map((el, index) =>
                     <ProjectItem
+                        key={index}
                         img={el.img}
                         href={el.href}
                         title={el.title}

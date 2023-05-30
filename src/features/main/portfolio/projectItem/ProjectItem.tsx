@@ -44,7 +44,7 @@ export const ProjectItem: FC<ProjectItemType> = ({title, img, href, description,
                     </DescriptionTitle>
                 </TitleProject>
 
-                <Description condition={showDescription}>
+                <Description>
                     {showDescription && <p>{description}</p>}
                 </Description>
             </div>

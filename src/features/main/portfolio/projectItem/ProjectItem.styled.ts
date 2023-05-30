@@ -38,10 +38,8 @@ export const DescriptionTitle = styled.div`
 `
 
 // =======================================//
-type DescriptionType = {
-    condition: boolean
-}
-export const Description = styled.p<DescriptionType>`
+
+export const Description = styled.p`
   color: ${theme.colors.secondary};
   margin-top: 8px;
 

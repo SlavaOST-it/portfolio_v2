@@ -18,8 +18,8 @@ export const RightSidebar = () => {
     return (
         <NavStyle>
             <WrapperRightBar>
-                {linksSVG.map(el =>
-                    <ListItem>
+                {linksSVG.map((el,index) =>
+                    <ListItem key={index}>
                         <NavLinkStyle to={el.href}
                                       spy={true}
                                       offset={-40}
