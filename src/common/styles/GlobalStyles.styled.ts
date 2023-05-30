@@ -13,6 +13,7 @@ export const GlobalStyled = createGlobalStyle`
   
   a, a:visited, a:hover {
     text-decoration: none;
+    color: ${theme.colors.baseColor};
   }
   
   ul li {
