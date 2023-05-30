@@ -1,4 +1,5 @@
 import React from 'react';
+import {animateScroll as scroll} from "react-scroll";
 
 import avatar from "../../assets/images/me.jpg"
 import sprite from "../../assets/icons/sprite.svg"
@@ -25,7 +26,9 @@ export const LeftSidebar = () => {
 
             <SocialLinks/>
 
-            <ButtonStyle>HIRE ME!</ButtonStyle>
+            <ButtonStyle
+            onClick={()=>{scroll.scrollToBottom()}}
+            >HIRE ME!</ButtonStyle>
         </Wrapper>
     );
 };
@@ -33,25 +36,24 @@ export const LeftSidebar = () => {
 
 const SocialLinks = () => {
     const linksSVG = [
-        {title: 'github', link: `${sprite}#git`, href: ""},
-        {title: 'linkedin', link: `${sprite}#linkedin`, href: ""},
-        {title: 'instagram', link: `${sprite}#instagram`, href: ""},
-        {title: 'vk', link: `${sprite}#vk`, href: ""},
+        {title: 'github', logoLink: `${sprite}#github`, href: "https://github.com/SlavaOST-it"},
+        {title: 'linkedin', logoLink: `${sprite}#linkedin`, href: "https://www.linkedin.com/in/vyacheslav-ostapkevich-918112254"},
+        {title: 'telegram', logoLink: `${sprite}#telegram`, href: "https://t.me/SlavaOST"},
+        {title: 'codewars', logoLink: `${sprite}#codewars`, href: "https://www.codewars.com/users/SlavaOST-it"},
     ]
 
     return (
         <SocialLinksStyled>
             <ul>
                 {linksSVG.map(el =>
-                    <li key={el.link}>
-                        <a href={el.href}>
+                    <li key={el.logoLink}>
+                        <a href={el.href} target={"_blank"} rel="noreferrer">
                             <svg>
-                                <use xlinkHref={el.link}/>
+                                <use xlinkHref={el.logoLink}/>
                             </svg>
                         </a>
                     </li>
                 )}
-
             </ul>
         </SocialLinksStyled>
     )
