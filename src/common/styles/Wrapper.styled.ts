@@ -11,7 +11,7 @@ export const TitlePage = styled.h2`
 
 export const Wrapper = styled.section`
   min-height: 100%;
-  margin-bottom: 150px;
+  padding-bottom: 100px;
 
   h1 {
     font-size: 78px;

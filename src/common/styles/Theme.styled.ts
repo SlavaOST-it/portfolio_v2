@@ -6,7 +6,7 @@ export const theme = {
 
         activeColor: {
             primary_color: "#28e98c",
-            dark_color: "#000000"
+            dark_color: "#000"
         },
     },
 
