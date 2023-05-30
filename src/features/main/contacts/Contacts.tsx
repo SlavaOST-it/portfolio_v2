@@ -1,19 +1,23 @@
 import React, {useState} from 'react';
-import {Wrapper} from "../../../common/styles/Wrapper.styled";
-import {NamePage} from "../../../common/components/nameBlock/NameBlock";
-import sprite from "../../../assets/icons/sprite.svg";
-import {useFormik} from 'formik';
-
 import * as Yup from 'yup';
+import {useFormik} from 'formik';
 import emailjs from '@emailjs/browser';
-import styled from "styled-components";
-import {theme} from "../../../common/styles/Theme.styled";
-import {ContactItem} from "./ContactItem";
+
+import sprite from "../../../assets/icons/sprite.svg";
+
+import {PATH} from "../../../utils/routes/routes";
+
+import {InfoModal} from "./infoModal/InfoModal";
+import {ContactItem} from "./contactItem/ContactItem";
 import {ButtonStyle} from "../../../common/components/button/Button";
+import {NamePage} from "../../../common/components/nameBlock/NameBlock";
+import {TitlePage, Wrapper} from "../../../common/styles/Wrapper.styled";
+import {ButtonBlock, ContactItemBlock, FormItem, FormStyle} from './Contacts.styled';
 
 
 export const Contacts = () => {
     const [openModal, setOpenModal] = useState(false)
+    const [showStyleModal, setShowStyleModal] = useState(false)
 
     const formik = useFormik({
         initialValues: {
@@ -36,16 +40,27 @@ export const Contacts = () => {
                     console.log(error.text);
                 });
             formik.resetForm()
-            setOpenModal(true)
-            setTimeout(() => setOpenModal(false), 5000)
+            openModalHandler()
+            setTimeout(closeInfoModal, 7000)
         }
     })
+
+    const openModalHandler = () => {
+        setOpenModal(true)
+        setShowStyleModal(true)
+    }
+
+    const closeInfoModal = () => {
+        setShowStyleModal(false)
+        setTimeout(() => setOpenModal(false), 4000)
+    }
+
     return (
-        <Wrapper>
+        <Wrapper id={PATH.contacts}>
             <NamePage nameBlock={"CONTACTS"} svgImg={`${sprite}#mail`}/>
-            <h2>
+            <TitlePage>
                 Let's Work <span>Together!</span>
-            </h2>
+            </TitlePage>
 
             <ContactItemBlock>
                 <ContactItem icon={"location"} direction={"Minsk, Belarus"}/>
@@ -115,79 +130,16 @@ export const Contacts = () => {
                         </a>
                     </ButtonStyle>
                 </ButtonBlock>
-
-
-
             </FormStyle>
+
+            <InfoModal
+                isOpen={openModal}
+                showStyleModal={showStyleModal}
+                onClose={closeInfoModal}
+            >
+                Your message has been sent <br/>
+                <span>Thanks</span> for the feedback
+            </InfoModal>
         </Wrapper>
     );
 };
-
-
-const FormItem = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  margin-bottom: 50px;
-
-  span {
-    color: #ce0000;
-  }
-
-  label {
-    margin-bottom: 6px;
-    font-size: 14px;
-    text-transform: uppercase;
-  }
-
-  input, textarea {
-    outline: none;
-    display: block;
-    color: #fff;
-    width: 300px;
-    border: none;
-    background: none;
-    font-size: 20px;
-
-    transition: .2s;
-    padding-bottom: 3px;
-  }
-
-  textarea {
-    font-family: 'Inter', sans-serif;
-    min-width: 90%;
-    height: 150px;
-    resize: none;
-    border-bottom: 0.5px solid ${theme.colors.secondary};
-  }
-
-  input:focus, textarea:focus {
-    outline: none;
-  }
-
-
-
-`
-
-
-const FormStyle = styled.form`
-
-
-
-
-
-
-
-`
-
-const ButtonBlock = styled.div`
-  :first-child {
-    margin-right: 50px;
-  }
-`
-const ContactItemBlock = styled.section`
-  display: flex;
-  justify-content: space-between;
-
-  margin-bottom: 20px;
-`
