@@ -1,40 +1,34 @@
-import React, {FC} from 'react';
-import {NamePage} from "../../../common/components/nameBlock/NameBlock";
+import React from 'react';
+
 import sprite from "../../../assets/icons/sprite.svg";
-import {Wrapper} from "../../../common/styles/Wrapper.styled";
-import {Skill} from "./skill/Skill";
-import styled from "styled-components";
+
+import {SkillItem} from "./skill/SkillItem";
+import { SkillsBlock } from './Skills.styled';
+import {PATH} from "../../../utils/routes/routes";
+import {NamePage} from "../../../common/components/nameBlock/NameBlock";
+import {TitlePage, Wrapper} from "../../../common/styles/Wrapper.styled";
+
 
 export const Skills = () => {
     return (
-        <Wrapper>
+        <Wrapper id={PATH.skills}>
             <NamePage nameBlock={"MY SKILLS"} svgImg={`${sprite}#skills`}/>
-            <h2>
+            <TitlePage>
                 My <span>Advantages</span>
-            </h2>
+            </TitlePage>
 
             <SkillsBlock>
-                <Skill idImgSkill={"react"} nameSkill={"React"}/>
-                <Skill idImgSkill={"js"} nameSkill={"JavaScript"}/>
-                <Skill idImgSkill={"ts"} nameSkill={"TypeScript"}/>
-                <Skill idImgSkill={"redux"} nameSkill={"Redux / Toolkit"}/>
-                <Skill idImgSkill={"html"} nameSkill={"HTML / CSS / SCSS"}/>
-                <Skill idImgSkill={"restAPI"} nameSkill={"Rest API / Axios"}/>
-                <Skill idImgSkill={"materialUI"} nameSkill={"Material UI / Styled component"}/>
-                <Skill idImgSkill={"unitTest"} nameSkill={"Unit tests / Postman"}/>
+                <SkillItem idImgSkill={"java-script"} nameSkill={"JavaScript"}/>
+                <SkillItem idImgSkill={"react"} nameSkill={"React"}/>
+                <SkillItem idImgSkill={"typescript"} nameSkill={"TypeScript"}/>
+                <SkillItem idImgSkill={"redux"} nameSkill={"Redux / Toolkit"}/>
+                <SkillItem idImgSkill={"html"} nameSkill={"HTML / CSS / SCSS"}/>
+                <SkillItem idImgSkill={"server"} nameSkill={"Rest API / Axios"}/>
+                <SkillItem idImgSkill={"material-ui"} nameSkill={"Material UI / Styled component"}/>
+                <SkillItem idImgSkill={"test"} nameSkill={"Unit tests"}/>
+                <SkillItem idImgSkill={"postman"} nameSkill={"Postman"}/>
+                <SkillItem idImgSkill={"git"} nameSkill={"Git / GitHub"}/>
             </SkillsBlock>
-
         </Wrapper>
     );
 };
-
-
-const SkillsBlock = styled.div`
-
-  display: flex;
-  flex-wrap: wrap;
-  
-  gap: 30px;
-  //flex: 0 0 auto;
-  //width: 25%;
-`
