@@ -87,5 +87,12 @@ export const NavStyle = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  @media ${theme.media.tablet}{
+    display: none;
+  }
 
+  @media ${theme.media.mobile}{
+    display: none;
+  }
 `
