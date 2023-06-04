@@ -24,6 +24,7 @@ export const GlobalStyled = createGlobalStyle`
     font-size: 16px;
     line-height: 1.7;
     font-weight: 400;
+    border: none;
   }
   
   p{

@@ -13,11 +13,14 @@ export const Home = () => {
         <Wrapper id={PATH.home}>
             <NamePage nameBlock={"INTRODUCE"} svgImg={`${sprite}#home`}/>
 
-            <h1>Hi, I'm <span>Slava</span>, <br/>Front-end Developer</h1>
+            <h1>Hi, I'm <span>Slava</span>,
+                <br/> Front-end Developer
+            </h1>
 
-            <p>I design and code beautifully simple things and i love what i do. Just simple like that!</p>
+            <p>I'm a front-end developer and create beautiful and functional interfaces for web applications. I love
+                what I do. It's that simple!</p>
+
         </Wrapper>
     );
 };
-
 
