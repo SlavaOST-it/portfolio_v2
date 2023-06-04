@@ -49,4 +49,13 @@ export const ButtonStyle = styled.button`
     color: ${theme.colors.activeColor.dark_color};
     text-align: center;
   }
+
+  &:hover svg{
+    fill: ${theme.colors.activeColor.primary_color};
+    transition: .3s;
+  }
+
+  @media screen and ${theme.media.mobile}{
+    padding: 5px 25px;
+  }
 `

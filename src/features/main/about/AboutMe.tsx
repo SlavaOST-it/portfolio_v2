@@ -19,8 +19,7 @@ export const AboutMe = () => {
             <p>
                 Hi, I am a front-end developer with
                 experience in building SPA applications using
-                React /Redux
-                /TypeScript in the team. My main
+                React / Redux / TypeScript in the team. My main
                 interest is programming and I'm
                 constantly expanding my skills,
                 To become a professional in this
