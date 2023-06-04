@@ -76,7 +76,7 @@ export const Contacts = () => {
                         type={"text"}
                         id={"from_name"}
                         placeholder={"Your Full Name"}
-                        {...formik.getFieldProps('from_name')}
+                        {...formik.getFieldProps("from_name")}
                     />
 
                     {formik.touched.from_name && formik.errors.from_name &&
@@ -85,12 +85,11 @@ export const Contacts = () => {
 
                 <FormItem>
                     <label> Email <span>*</span> </label>
-
                     <input
                         type={"text"}
                         id={"reply_to"}
                         placeholder={"Your email address"}
-                        {...formik.getFieldProps('reply_to')}
+                        {...formik.getFieldProps("reply_to")}
                     />
 
                     {formik.touched.reply_to && formik.errors.reply_to &&
@@ -101,11 +100,9 @@ export const Contacts = () => {
                 <FormItem>
                     <label> Message <span>*</span> </label>
                     <textarea id={"message"}
-                              name={"message"}
                               placeholder={"Write your message here"}
                               autoComplete="off"
-                              onChange={formik.handleChange}
-                              value={formik.values.message}
+                              {...formik.getFieldProps("message")}
                     />
 
                     {formik.touched.message && formik.errors.message &&

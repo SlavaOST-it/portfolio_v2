@@ -15,13 +15,16 @@ export const ContactItemStyle = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-shrink: 1;
   
  
   
   border: 3px solid ${theme.colors.secondary};
   border-radius: 85px;
   
-  min-width: 250px;
+  min-width: 200px;
+  max-width: 250px;
+  width: 100%;
   min-height: 100px;
   
   margin-bottom: 20px;
@@ -48,5 +51,8 @@ export const ContactItemStyle = styled.div`
     color: ${theme.colors.baseColor};
     font-size: 18px;
   }
-  
+
+  @media screen and ${theme.media.tablet} {
+    max-width: 100%;
+  }
 `

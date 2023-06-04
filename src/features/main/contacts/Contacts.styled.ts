@@ -22,7 +22,7 @@ export const FormItem = styled.div`
     outline: none;
     display: block;
     color: ${theme.colors.baseColor};
-    width: 300px;
+    max-width: 95%;
     border: none;
     background: none;
     font-size: 20px;
@@ -33,7 +33,7 @@ export const FormItem = styled.div`
 
   textarea {
     font-family: 'Inter', sans-serif;
-    min-width: 90%;
+    min-width: 100%;
     height: 150px;
     resize: none;
     border-bottom: 0.5px solid ${theme.colors.secondary};
@@ -55,8 +55,10 @@ export const FormStyle = styled.form`
 export const ButtonBlock = styled.div`
   display: flex;
   justify-content: space-between;
-  max-width: 90%;
-
+  max-width: 100%;
+  
+  gap: 15px;
+  
 `
 
 
@@ -64,6 +66,15 @@ export const ButtonBlock = styled.div`
 export const ContactItemBlock = styled.section`
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   margin-bottom: 20px;
+
+  
+  @media screen and ${theme.media.tablet} {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `
