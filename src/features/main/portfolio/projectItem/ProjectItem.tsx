@@ -20,6 +20,19 @@ type ProjectItemType = {
 
 export const ProjectItem: FC<ProjectItemType> = ({title, img, href, description, gradient1, gradient2}) => {
     const [showDescription, setShowDescription] = useState(false)
+    const [showStyleDescription, setShowStyleDescription] = useState(false)
+
+
+    const onClickDescriptionHandler = (showDescription: boolean) => {
+        if (!showDescription) {
+            setShowDescription(true)
+            setShowStyleDescription(true)
+        }
+        if (showDescription) {
+            setShowStyleDescription(false)
+            setTimeout(() => setShowDescription(false), 2000)
+        }
+    }
 
     return (
         <ProjectWrapper>
@@ -39,12 +52,12 @@ export const ProjectItem: FC<ProjectItemType> = ({title, img, href, description,
                         {title}
                     </LinkProject>
 
-                    <DescriptionTitle onClick={() => setShowDescription(!showDescription)}>
+                    <DescriptionTitle onClick={()=>onClickDescriptionHandler(showDescription)}>
                         description
                     </DescriptionTitle>
                 </TitleProject>
 
-                <Description>
+                <Description show_styles_description={showStyleDescription}>
                     {showDescription && <p>{description}</p>}
                 </Description>
             </div>

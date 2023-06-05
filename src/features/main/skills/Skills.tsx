@@ -12,7 +12,7 @@ import {TitlePage, Wrapper} from "../../../common/styles/Wrapper.styled";
 export const Skills = () => {
     return (
         <Wrapper id={PATH.skills}>
-            <NamePage nameBlock={"MY SKILLS"} svgImg={`${sprite}#skills`}/>
+            <NamePage nameBlock={"SKILLS"} svgImg={`${sprite}#skills`}/>
             <TitlePage>
                 My <span>Advantages</span>
             </TitlePage>

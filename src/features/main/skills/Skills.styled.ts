@@ -4,7 +4,6 @@ export const SkillsBlock = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  
-  max-width: 90%;
+
   gap: 30px;
 `

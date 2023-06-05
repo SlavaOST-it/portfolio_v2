@@ -9,6 +9,8 @@ export const TitlePage = styled.h2`
   margin-bottom: 33px;
 `
 
+
+// =======================================//
 export const Wrapper = styled.section`
   min-height: 100%;
   padding-bottom: 100px;
@@ -26,10 +28,34 @@ export const Wrapper = styled.section`
   }
 
   p {
+    max-width: 650px;
+
     font-size: 18px;
     opacity: 1;
-    max-width: 600px;
     margin-bottom: 31px;
+    line-height: 30px;
+  }
 
+  @media screen and ${theme.media.desktop} {
+    max-width: 767px;
+    margin: 50px auto;
+  }
+
+  @media screen and ${theme.media.tablet} {
+    max-width: 576px;
+    width: 100%;
+    padding: 10px;
+    margin: 50px auto;
+  }
+
+  @media screen and ${theme.media.mobile} {
+    max-width: 320px;
+    padding: 5px;
+
+    h1{
+      font-size: 58px;
+      letter-spacing: 0;
+      line-height: 60px;
+    }
   }
 `

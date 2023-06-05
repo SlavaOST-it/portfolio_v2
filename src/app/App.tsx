@@ -40,6 +40,8 @@ const AppWrapper = styled.div`
   }
 
   @media screen and ${theme.media.mobile} {
+    
     max-width: 320px;
+    margin: 0 auto;
   }
 `

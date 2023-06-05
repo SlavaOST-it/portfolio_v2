@@ -10,6 +10,8 @@ import {PATH} from "../../../utils/routes/routes";
 
 import {NamePage} from "../../../common/components/nameBlock/NameBlock";
 import {TitlePage, Wrapper} from "../../../common/styles/Wrapper.styled";
+import styled from "styled-components";
+import {theme} from "../../../common/styles/Theme.styled";
 
 
 export const Portfolio = () => {
@@ -20,7 +22,7 @@ export const Portfolio = () => {
                 Featured <span>Projects</span>
             </TitlePage>
 
-            <div>
+            <ProjectsBlock>
                 {projects.map((el, index) =>
                     <ProjectItem
                         key={index}
@@ -32,7 +34,18 @@ export const Portfolio = () => {
                         description={el.description}
                     />
                 )}
-            </div>
+            </ProjectsBlock>
         </Wrapper>
     );
 };
+
+
+const ProjectsBlock = styled.div`
+  // @media screen and ${theme.media.desktop} {
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   align-items: center;
+  //
+  // }
+`

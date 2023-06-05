@@ -81,6 +81,7 @@ export const WrapperRightBar = styled.ul`
 
   gap: 20px;
   z-index: 20;
+  
 `
 
 export const NavStyle = styled.nav`
@@ -88,11 +89,8 @@ export const NavStyle = styled.nav`
   align-items: center;
   justify-content: center;
   
-  @media ${theme.media.tablet}{
-    display: none;
-  }
-
-  @media ${theme.media.mobile}{
+  
+  @media screen and ${theme.media.tablet}{
     display: none;
   }
 `

@@ -1,10 +1,13 @@
 import styled from "styled-components";
 import {theme} from "../../../../common/styles/Theme.styled";
-import {showDescription} from "../../../../common/styles/animations/Animation";
+import {hiddenDescription, showDescription} from "../../../../common/styles/animations/Animation";
 
 
 export const ImageProject = styled.img`
-  height: 250px;
+  min-width: 150px;
+  max-width: 450px;
+  padding: 10px;
+  
   border-radius: 30px;
 `
 
@@ -38,15 +41,17 @@ export const DescriptionTitle = styled.div`
 `
 
 // =======================================//
-
-export const Description = styled.p`
+type DescriptionType = {
+    show_styles_description: boolean
+}
+export const Description = styled.p<DescriptionType>`
   color: ${theme.colors.secondary};
   margin-top: 8px;
 
   p {
-    opacity: 0;
-    animation-name: ${showDescription};
-    animation-duration: 3s;
+    ${props => (props.show_styles_description ? 0 : 1)};
+    animation-name: ${(props) => (props.show_styles_description ? showDescription : hiddenDescription)};
+    animation-duration: 2s;
     animation-fill-mode: both;
   }
 `
@@ -85,7 +90,6 @@ export const BodyProject = styled.a<BodyProjectType>`
 
 // =======================================//
 export const ProjectWrapper = styled.div`
-  max-width: 80%;
-
+  max-width: 100%;
   margin-bottom: 50px;
 `

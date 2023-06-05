@@ -2,7 +2,6 @@ import styled from "styled-components";
 import {theme} from "../../common/styles/Theme.styled";
 
 
-
 export const Header = styled.header`
   display: flex;
   justify-content: space-between;
@@ -58,15 +57,16 @@ export const Description = styled.section`
 `
 
 
-export const SocialLinksStyled = styled.section`  
+export const SocialLinksStyled = styled.section`
   margin-bottom: 30px;
-  
-  ul{
+
+  ul {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
   }
+
   li {
     display: flex;
     justify-content: center;
@@ -77,10 +77,10 @@ export const SocialLinksStyled = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     width: 50px;
     height: 50px;
-    
+
     border: 2px solid ${theme.colors.secondary};
     border-radius: 50%;
 
@@ -103,10 +103,10 @@ export const SocialLinksStyled = styled.section`
     fill: ${theme.colors.secondary};
     transition: .3s;
   }
-  
+
 `
 
-export const Wrapper = styled.div`
+export const LeftSideBarWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -124,4 +124,22 @@ export const Wrapper = styled.div`
   transform: translateY(-50%);
 
   z-index: 10;
+
+  @media screen and ${theme.media.desktop} {
+    position: relative;
+    max-width: 767px;
+    left: 0;
+    margin: 20px auto 0;
+    top: 0;
+    transform: translateY(0);
+  }
+
+  @media screen and ${theme.media.tablet} {
+    max-width: 576px;
+    z-index: 1;
+  }
+
+  @media screen and ${theme.media.mobile} {
+    max-width: 320px;
+  }
 `
