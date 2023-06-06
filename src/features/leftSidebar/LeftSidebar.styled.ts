@@ -140,6 +140,6 @@ export const LeftSideBarWrapper = styled.div`
   }
 
   @media screen and ${theme.media.mobile} {
-    max-width: 320px;
+    max-width: 300px;
   }
 `

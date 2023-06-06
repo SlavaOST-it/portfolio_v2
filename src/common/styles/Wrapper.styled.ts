@@ -49,8 +49,9 @@ export const Wrapper = styled.section`
   }
 
   @media screen and ${theme.media.mobile} {
-    max-width: 320px;
-    padding: 5px;
+    max-width: 300px;
+    padding: 10px 5px;
+    margin: 50px auto;
 
     h1{
       font-size: 58px;

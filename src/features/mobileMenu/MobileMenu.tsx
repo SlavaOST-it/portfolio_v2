@@ -10,15 +10,15 @@ export const MobileMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <>
-            <BurgerButton
-                is_open={!isOpen}
+        <MobileMenuStyle>
+            {!isOpen && (<BurgerButton
+                // is_open={!isOpen}
                 onClick={() => setIsOpen(true)}
             >
                 <span></span>
                 <span></span>
-            </BurgerButton>
-
+            </BurgerButton>)
+            }
             <MenuWrapper className={isOpen ? 'open' : ''}>
                 <MenuHeader>
                     <CrossIcon onClick={() => setIsOpen(false)}>&times;</CrossIcon>
@@ -50,16 +50,17 @@ export const MobileMenu = () => {
                     <p>Social</p>
                 </MenuBody>
             </MenuWrapper>
-        </>
+        </MobileMenuStyle>
     );
 };
 
 
 type BurgerButtonType={
-    is_open: boolean
+    // is_open: boolean
 }
 const BurgerButton = styled.button<BurgerButtonType>`
-  display: ${props => props.is_open ? 'block' : 'none'};
+  //display: 
+  
 
   position: fixed;
   right: 20px;
@@ -101,6 +102,7 @@ const BurgerButton = styled.button<BurgerButtonType>`
     left: 11px;
     bottom: 16px;
   }
+  
 `
 
 const MenuWrapper = styled.div`
@@ -176,6 +178,16 @@ const NavLinkMobile = styled(Link)`
     ${NameLinkMobile} {
       color: ${theme.colors.activeColor.primary_color};
     }
+  }
+`
+
+
+const MobileMenuStyle = styled.div`
+  display: none;
+
+  
+  @media ${theme.media.tablet}{
+    display: block;
   }
 
 `

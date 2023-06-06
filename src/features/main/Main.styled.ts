@@ -19,4 +19,8 @@ export const WrapperMain = styled.div`
   @media screen and ${theme.media.tablet} {
     margin: 0 auto;
   }
+
+  @media screen and ${theme.media.mobile} {
+    margin: 0 auto;
+  }
 `

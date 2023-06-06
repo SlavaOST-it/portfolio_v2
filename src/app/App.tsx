@@ -22,26 +22,8 @@ export const App = () => {
 
 const AppWrapper = styled.div`
 
-    @media screen and ${theme.media.desktop}{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      padding: 0 15px;
-      
-    }
-
-  @media screen and ${theme.media.mobile}{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
+  
   @media screen and ${theme.media.mobile} {
-    
-    max-width: 320px;
-    margin: 0 auto;
+    padding: 0 5px;
   }
 `
