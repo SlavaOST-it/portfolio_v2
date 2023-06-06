@@ -1,6 +1,7 @@
 import React from 'react';
+
+import {linksMenu} from "../../common/components/links/links";
 import {ListItem, LogoLink, NameLink, NavLinkStyle, NavStyle, WrapperRightBar} from "./RightSidebar.styled";
-import {linksMenu} from "../../common/components/linksMenu/linksMenu";
 
 
 export const RightSidebar = () => {

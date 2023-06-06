@@ -9,6 +9,8 @@ export const LogoLink = styled.svg`
   fill: ${theme.colors.secondary};
   transition: .3s;
 `
+
+//===================================//
 export const NameLink = styled.span`
   display: block;
   position: absolute;
@@ -39,6 +41,7 @@ export const NameLink = styled.span`
 
 `
 
+//===================================//
 export const NavLinkStyle = styled(Link)`
   position: relative;
   
@@ -55,6 +58,7 @@ export const NavLinkStyle = styled(Link)`
   }
 `
 
+//===================================//
 export const ListItem = styled.li`
   display: flex;
   align-items: center;
@@ -62,6 +66,7 @@ export const ListItem = styled.li`
   width: 55px;
 `
 
+//===================================//
 export const WrapperRightBar = styled.ul`
   display: flex;
   flex-direction: column;
@@ -84,6 +89,7 @@ export const WrapperRightBar = styled.ul`
   
 `
 
+//===================================//
 export const NavStyle = styled.nav`
   display: flex;
   align-items: center;
