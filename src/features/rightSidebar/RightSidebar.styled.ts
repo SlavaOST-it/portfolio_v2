@@ -90,7 +90,7 @@ export const NavStyle = styled.nav`
   justify-content: center;
   
   
-  @media screen and ${theme.media.tablet}{
+  @media screen and ${theme.media.desktop}{
     display: none;
   }
 `

@@ -233,7 +233,7 @@ const MobileMenuStyle = styled.div<{ isOpen: boolean }>`
     display: ${({isOpen}) => (isOpen ? 'block' : 'none')};
   }
 
-  @media screen and ${theme.media.tablet} {
+  @media screen and ${theme.media.desktop} {
     display: block;
   }
 
