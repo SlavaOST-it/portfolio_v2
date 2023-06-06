@@ -30,6 +30,7 @@ export const GlobalStyled = createGlobalStyle`
   p{
     color: ${theme.colors.secondary};
   }
+  
 
   body {
     background-color: ${theme.colors.background};

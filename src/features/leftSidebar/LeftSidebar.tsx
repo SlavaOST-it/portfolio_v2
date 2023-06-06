@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {animateScroll as scroll} from "react-scroll";
 
 import avatar from "../../assets/images/me.jpg"
 import sprite from "../../assets/icons/sprite.svg"
 
 import {ButtonStyle} from "../../common/components/button/Button";
-import {Avatar, Description, Header, SocialLinksStyled, LeftSideBarWrapper} from './LeftSidebar.styled';
+import {linksLeftSideBarSVG} from "../../common/components/linksLeftSidebar/linksLeftSidebar";
+import {Avatar, Description, Header, LeftSideBarWrapper, SocialLinksStyled} from './LeftSidebar.styled';
 
 
 export const LeftSidebar = () => {
@@ -24,7 +25,7 @@ export const LeftSidebar = () => {
                 <p>© 2023 SlavaOST. All Rights Reserved</p>
             </Description>
 
-            <SocialLinks/>
+            <SocialLinks linksSVG={linksLeftSideBarSVG} border={true}/>
 
             <ButtonStyle
                 onClick={() => {
@@ -40,20 +41,19 @@ export const LeftSidebar = () => {
 };
 
 
-const SocialLinks = () => {
-    const linksSVG = [
-        {title: 'github', logoLink: `${sprite}#github`, href: "https://github.com/SlavaOST-it"},
+type SocialLinksType = {
+    linksSVG: Array<
         {
-            title: 'linkedin',
-            logoLink: `${sprite}#linkedin`,
-            href: "https://www.linkedin.com/in/vyacheslav-ostapkevich-918112254"
-        },
-        {title: 'telegram', logoLink: `${sprite}#telegram`, href: "https://t.me/SlavaOST"},
-        {title: 'codewars', logoLink: `${sprite}#codewars`, href: "https://www.codewars.com/users/SlavaOST-it"},
-    ]
-
+            title: string,
+            logoLink: string,
+            href: string
+        }>,
+    sizeSVG?: string,
+    border?: boolean
+}
+export const SocialLinks: FC<SocialLinksType> = ({linksSVG,sizeSVG,border}) => {
     return (
-        <SocialLinksStyled>
+        <SocialLinksStyled sizeSVG={sizeSVG ?? ""} border={!!border}>
             <ul>
                 {linksSVG.map(el =>
                     <li key={el.logoLink}>

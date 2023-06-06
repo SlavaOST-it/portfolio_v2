@@ -58,5 +58,9 @@ export const Wrapper = styled.section`
       letter-spacing: 0;
       line-height: 60px;
     }
+    
+    h2{
+      font-size: 42px;
+    }
   }
 `

@@ -57,7 +57,7 @@ export const Description = styled.section`
 `
 
 
-export const SocialLinksStyled = styled.section`
+export const SocialLinksStyled = styled.section<{ sizeSVG: string, border: boolean }>`
   margin-bottom: 30px;
 
   ul {
@@ -81,7 +81,7 @@ export const SocialLinksStyled = styled.section`
     width: 50px;
     height: 50px;
 
-    border: 2px solid ${theme.colors.secondary};
+    border: ${({border}) => (border ? `2px solid ${theme.colors.secondary}` : "none")};
     border-radius: 50%;
 
     transition: .3s;
@@ -98,8 +98,8 @@ export const SocialLinksStyled = styled.section`
   }
 
   svg {
-    width: 20px;
-    height: 20px;
+    width: ${({sizeSVG}) => (sizeSVG || "20px")};
+    height: ${({sizeSVG}) => (sizeSVG || "20px")};
     fill: ${theme.colors.secondary};
     transition: .3s;
   }
@@ -114,6 +114,8 @@ export const LeftSideBarWrapper = styled.div`
   width: 100%;
   max-width: 350px;
   padding: 30px;
+
+  text-align: center;
 
   border-radius: 30px;
   border: 1px solid #565656;
