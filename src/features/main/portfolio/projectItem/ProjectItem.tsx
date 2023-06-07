@@ -52,7 +52,7 @@ export const ProjectItem: FC<ProjectItemType> = ({title, img, href, description,
                     </LinkProject>
 
                     <DescriptionTitle onClick={() => onClickDescriptionHandler(showDescription)}>
-                        {showDescription ? "hide description" : "show description"}
+                        {showDescription ? "hide" : "show more"}
                     </DescriptionTitle>
                 </TitleProject>
 

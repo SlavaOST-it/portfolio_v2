@@ -7,8 +7,8 @@ import sprite from "../../../assets/icons/sprite.svg";
 
 import {PATH} from "../../../utils/routes/routes";
 
-import {InfoModal} from "../../../common/components/infoModal/InfoModal";
 import {ContactItem} from "./contactItem/ContactItem";
+import {Modal} from "../../../common/components/infoModal/Modal";
 import {ButtonStyle} from "../../../common/components/button/Button";
 import {NamePage} from "../../../common/components/nameBlock/NameBlock";
 import {TitlePage, Wrapper} from "../../../common/styles/Wrapper.styled";
@@ -18,6 +18,8 @@ import {ButtonsBlock, ContactItemsBlock, ErrorMessage, FormItem, FormStyle} from
 export const Contacts = () => {
     const [openModal, setOpenModal] = useState(false)
     const [showStyleModal, setShowStyleModal] = useState(false)
+
+    const [openMapModal, setOpenMapModal] = useState(false)
 
     const formik = useFormik({
         initialValues: {
@@ -40,19 +42,21 @@ export const Contacts = () => {
                     console.log(error.text);
                 });
             formik.resetForm()
-            openModalHandler()
+            openModalHandler("text")
             setTimeout(closeInfoModal, 7000)
         }
     })
 
-    const openModalHandler = () => {
-        setOpenModal(true)
+    const openModalHandler = (value: "text" | "map") => {
+        value === "text" ? setOpenModal(true) : setOpenMapModal(true)
         setShowStyleModal(true)
     }
 
-    const closeInfoModal = () => {
+    const closeInfoModal = (value: "text" | "map") => {
+        value === "text"
+            ? setTimeout(() => setOpenModal(false), 2000)
+            : setTimeout(() => setOpenMapModal(false), 2000)
         setShowStyleModal(false)
-        setTimeout(() => setOpenModal(false), 2000)
     }
 
     return (
@@ -63,7 +67,7 @@ export const Contacts = () => {
             </TitlePage>
 
             <ContactItemsBlock>
-                <ContactItem icon={"location"} direction={"Minsk, Belarus"} callBack={openModalHandler}/>
+                <ContactItem icon={"location"} direction={"Minsk, Belarus"} callBack={() => openModalHandler("map")}/>
                 <ContactItem icon={"message"} direction={"slavaost-it@mail.ru"} href={"mailto: slavaost-it@mail.ru"}/>
                 <ContactItem icon={"phone"} direction={"+375 (29) 667-10-53"} href={"tel: +375296671053"}/>
             </ContactItemsBlock>
@@ -129,22 +133,28 @@ export const Contacts = () => {
                 </ButtonsBlock>
             </FormStyle>
 
-            <InfoModal
+            <Modal
                 isOpen={openModal}
                 showStyleModal={showStyleModal}
-                onClose={closeInfoModal}
+                onClose={() => closeInfoModal("text")}
             >
-                {/*Your message has been sent <br/>*/}
-                {/*<span>Thanks</span> for the feedback*/}
+                Your message has been sent <br/>
+                <span>Thanks</span> for the feedback
+            </Modal>
 
+            <Modal
+                isOpen={openMapModal}
+                showStyleModal={showStyleModal}
+                onClose={() => closeInfoModal("map")}
+            >
                 <iframe
-                    src="https://yandex.by/map-widget/v1/?ll=27.694352%2C53.855338&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzAwMDExNxIc0JHQtdC70LDRgNGD0YHRjCwg0JzRltC90YHQuiIKDQ5y3EEVZpxXQg%2C%2C&z=10.15"
+                    title={"map"}
+                    src="https://yandex.by/map-widget/v1/?ll=31.400540%2C53.545690&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzAwMDExNxIc0JHQtdC70LDRgNGD0YHRjCwg0JzRltC90YHQuiIKDQ5y3EEVZpxXQg%2C%2C&z=5.69"
                     width="100%" height="100%" frameBorder="1" allowFullScreen={true}
                     style={{position: "relative", borderRadius: "50px"}}>
+
                 </iframe>
-            </InfoModal>
+            </Modal>
         </Wrapper>
     );
 };
-
-
