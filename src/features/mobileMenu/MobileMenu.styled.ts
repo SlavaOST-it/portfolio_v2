@@ -73,7 +73,7 @@ export const MenuWrapper = styled.div`
   width: 300px;
   height: 100vh;
   background-color: ${theme.colors.background};
-  z-index: 10;
+  z-index: 999;
   transition: all 0.3s ease-in-out;
 
   &.open {
@@ -97,7 +97,7 @@ export const CrossIcon = styled.span`
 `
 
 //===================================//
-export const MenuBody = styled.div`
+export const MenuBody = styled.nav`
   padding: 40px 70px;
 
 `
@@ -110,7 +110,7 @@ export const MenuTitle = styled.p`
 //===================================//
 export const MenuItem = styled.li`
   list-style-type: none;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 
   align-items: center;
   cursor: pointer;
@@ -161,7 +161,7 @@ export const MobileMenuStyle = styled.div<{ isOpen: boolean }>`
     width: 100%;
     height: 100%;
     background-color: rgba(133, 133, 133, 0.62);
-    z-index: 9;
+    z-index: 90;
     display: ${({isOpen}) => (isOpen ? 'block' : 'none')};
   }
 

@@ -2,12 +2,10 @@ import styled from "styled-components";
 import {theme} from "../../common/styles/Theme.styled";
 
 
-export const WrapperMain = styled.div`
+export const WrapperMain = styled.main`
   margin-top: 50px;
   margin-left: 450px;
   margin-right: 150px;
-
-  height: 100vh;
 
   gap: 150px;
 

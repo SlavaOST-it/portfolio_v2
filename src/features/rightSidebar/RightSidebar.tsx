@@ -12,7 +12,7 @@ export const RightSidebar = () => {
                     <ListItem key={index}>
                         <NavLinkStyle to={el.href}
                                       spy={true}
-                                      offset={-40}
+                                      offset={-50}
                                       duration={1200}
                                       activeClass="active"
                                       smooth={"easeInOutQuart"}

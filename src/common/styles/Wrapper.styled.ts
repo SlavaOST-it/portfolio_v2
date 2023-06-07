@@ -6,20 +6,26 @@ export const TitlePage = styled.h2`
   font-size: 48px;
   line-height: 60px;
   font-weight: 300;
-  margin-bottom: 33px;
+  margin-bottom: 34px;
 `
-
 
 // =======================================//
 export const Wrapper = styled.section`
   min-height: 100%;
   padding-bottom: 100px;
+  
+  margin-bottom: 50px;
+  
+  &:last-child{
+    padding-bottom: 50px;
+    margin-bottom: 20px;
+  }
 
   h1 {
     font-size: 78px;
     letter-spacing: -0.2px;
     line-height: 90px;
-    margin-bottom: 43px;
+    margin-bottom: 42px;
     font-weight: 300;
   }
 
@@ -32,7 +38,7 @@ export const Wrapper = styled.section`
 
     font-size: 18px;
     opacity: 1;
-    margin-bottom: 31px;
+    margin-bottom: 32px;
     line-height: 30px;
   }
 

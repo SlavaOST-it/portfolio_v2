@@ -2,6 +2,13 @@ import styled from "styled-components";
 import {theme} from "../../../common/styles/Theme.styled";
 
 
+
+export const ErrorMessage = styled.p`
+  color: red;
+  font-size: 14px;
+`
+
+// ==============================//
 export const FormItem = styled.div`
   display: flex;
   flex-direction: column;
@@ -31,6 +38,14 @@ export const FormItem = styled.div`
     padding-bottom: 3px;
   }
 
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    -webkit-text-fill-color: ${theme.colors.baseColor};
+    -webkit-box-shadow: 0 0 0px 40rem ${theme.colors.background} inset;
+    color: ${theme.colors.baseColor};
+  }
+
   textarea {
     font-family: 'Inter', sans-serif;
     min-width: 100%;
@@ -52,7 +67,7 @@ export const FormStyle = styled.form`
 
 
 // ==============================//
-export const ButtonBlock = styled.div`
+export const ButtonsBlock = styled.div`
   display: flex;
   justify-content: space-between;
   max-width: 100%;
@@ -63,7 +78,7 @@ export const ButtonBlock = styled.div`
 
 
 // ==============================//
-export const ContactItemBlock = styled.section`
+export const ContactItemsBlock = styled.section`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

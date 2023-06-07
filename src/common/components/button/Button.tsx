@@ -1,22 +1,5 @@
-import React, {FC, ReactChildren, ReactNode} from 'react';
 import styled from "styled-components";
 import {theme} from "../../styles/Theme.styled";
-
-
-// type ButtonType = {
-//
-//     callBack?: () => void
-//     children: ReactNode
-// }
-// export const Button: FC<ButtonType> = ({callBack, children}) => {
-//     return (
-//         <ButtonStyle
-//             onClick={callBack}
-//         >
-//             {children}
-//         </ButtonStyle>
-//     );
-// };
 
 
 export const ButtonStyle = styled.button`
@@ -50,6 +33,10 @@ export const ButtonStyle = styled.button`
     text-align: center;
   }
 
+  svg{
+    transition: .3s;
+  }
+  
   &:hover svg{
     fill: ${theme.colors.activeColor.primary_color};
     transition: .3s;

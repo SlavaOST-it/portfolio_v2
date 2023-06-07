@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {theme} from "../../common/styles/Theme.styled";
 
 
-export const Header = styled.header`
+export const Header = styled.div`
   display: flex;
   justify-content: space-between;
 
@@ -57,7 +57,7 @@ export const Description = styled.section`
 `
 
 
-export const SocialLinksStyled = styled.section<{ sizeSVG: string, border: boolean }>`
+export const SocialLinksStyled = styled.div<{ sizeSVG: string, border: boolean }>`
   margin-bottom: 30px;
 
   ul {
@@ -103,10 +103,9 @@ export const SocialLinksStyled = styled.section<{ sizeSVG: string, border: boole
     fill: ${theme.colors.secondary};
     transition: .3s;
   }
-
 `
 
-export const LeftSideBarWrapper = styled.div`
+export const LeftSideBarWrapper = styled.aside`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -127,6 +126,10 @@ export const LeftSideBarWrapper = styled.div`
 
   z-index: 10;
 
+  @media screen and (min-width: 1700px) {
+    left: calc(100vw - 50% - 850px);
+  }
+
   @media screen and ${theme.media.desktop} {
     position: relative;
     max-width: 767px;
@@ -143,5 +146,6 @@ export const LeftSideBarWrapper = styled.div`
 
   @media screen and ${theme.media.mobile} {
     max-width: 300px;
+    width: 100%;
   }
 `

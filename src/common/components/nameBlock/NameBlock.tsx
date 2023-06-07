@@ -16,7 +16,7 @@ export const NamePage: FC<NamePageType> = ({nameBlock, svgImg}) => {
                 <use xlinkHref={svgImg}/>
             </svg>
 
-            <h4>{nameBlock}</h4>
+            <h3>{nameBlock}</h3>
         </NameBlockStyle>
     );
 };
@@ -33,16 +33,16 @@ const NameBlockStyle = styled.div`
   margin-bottom: 40px;
   display: inline-flex;
   align-items: center;
-
-
+  
   svg {
     width: 16px;
     height: 16px;
+    margin-right: 10px;   
     
     fill: ${theme.colors.baseColor};
-    
-    margin-right: 10px;
-
-   
+  }
+  
+  h3{
+    font-size: 12px;;
   }
 `

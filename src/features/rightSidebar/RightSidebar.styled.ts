@@ -79,10 +79,7 @@ export const WrapperRightBar = styled.ul`
   border-radius: 30px;
   border: 1px solid #565656;
 
-  position: fixed;
-  right: 50px;
-  top: 50%;
-  transform: translateY(-50%);
+  
 
   gap: 20px;
   z-index: 20;
@@ -94,7 +91,15 @@ export const NavStyle = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
+  position: fixed;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @media screen and (min-width: 1700px) {
+    right: calc(100vw - 50% - 850px);
+  }
   
   @media screen and ${theme.media.desktop}{
     display: none;

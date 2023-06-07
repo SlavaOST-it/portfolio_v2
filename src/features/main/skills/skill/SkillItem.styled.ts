@@ -9,33 +9,22 @@ export const CircleSkill = styled.div`
   
   width: 120px;
   height: 150px;
-
-  border: 3px solid ${theme.colors.secondary};
+  
+  border: 3px solid ${theme.colors.activeColor.primary_color};
   border-radius: 85px;
   padding: 54px 0 48px 0;
-  margin-bottom: 20px;
-  transition: .3s;
+  margin-bottom: 20px;  
   
-  &:hover{
-    border-color:  ${theme.colors.activeColor.primary_color};
-    transition: .3s;
-  }
-  &:hover svg{
-    fill: ${theme.colors.activeColor.primary_color};
-    transition: .3s;
-  }
   svg{
     display: block;
     width: 60px;
     height: 60px;    
     fill: ${theme.colors.baseColor};
-
-    transition: .3s;
   }
 `
 
 // =============================//
-export const SkillBlock =styled.section`
+export const SkillBlock =styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

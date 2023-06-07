@@ -7,12 +7,12 @@ import sprite from "../../../assets/icons/sprite.svg";
 
 import {PATH} from "../../../utils/routes/routes";
 
-import {InfoModal} from "./infoModal/InfoModal";
+import {InfoModal} from "../../../common/components/infoModal/InfoModal";
 import {ContactItem} from "./contactItem/ContactItem";
 import {ButtonStyle} from "../../../common/components/button/Button";
 import {NamePage} from "../../../common/components/nameBlock/NameBlock";
 import {TitlePage, Wrapper} from "../../../common/styles/Wrapper.styled";
-import {ButtonBlock, ContactItemBlock, FormItem, FormStyle} from './Contacts.styled';
+import {ButtonsBlock, ContactItemsBlock, ErrorMessage, FormItem, FormStyle} from './Contacts.styled';
 
 
 export const Contacts = () => {
@@ -27,7 +27,7 @@ export const Contacts = () => {
         },
         validationSchema: Yup.object({
             from_name: Yup.string().required('* Name field is required'),
-            reply_to: Yup.string().email('Invalid email address')
+            reply_to: Yup.string().email('Invalid email address').matches(/^[^@]+@[^@]+\.[^@]+$/, 'Invalid email address')
                 .required('* Email field is required'),
             message: Yup.string().required('* Message field is required')
 
@@ -52,7 +52,7 @@ export const Contacts = () => {
 
     const closeInfoModal = () => {
         setShowStyleModal(false)
-        setTimeout(() => setOpenModal(false), 4000)
+        setTimeout(() => setOpenModal(false), 2000)
     }
 
     return (
@@ -62,16 +62,16 @@ export const Contacts = () => {
                 Let's Work <span>Together!</span>
             </TitlePage>
 
-            <ContactItemBlock>
-                <ContactItem icon={"location"} direction={"Minsk, Belarus"}/>
+            <ContactItemsBlock>
+                <ContactItem icon={"location"} direction={"Minsk, Belarus"} callBack={openModalHandler}/>
                 <ContactItem icon={"message"} direction={"slavaost-it@mail.ru"} href={"mailto: slavaost-it@mail.ru"}/>
                 <ContactItem icon={"phone"} direction={"+375 (29) 667-10-53"} href={"tel: +375296671053"}/>
-            </ContactItemBlock>
+            </ContactItemsBlock>
 
 
             <FormStyle onSubmit={formik.handleSubmit}>
                 <FormItem>
-                    <label>FULL NAME <span>*</span></label>
+                    <label htmlFor={"from_name"}>FULL NAME <span>*</span></label>
                     <input
                         type={"text"}
                         id={"from_name"}
@@ -80,7 +80,7 @@ export const Contacts = () => {
                     />
 
                     {formik.touched.from_name && formik.errors.from_name &&
-                        <div>{formik.errors.from_name}</div>}
+                        <ErrorMessage>{formik.errors.from_name}</ErrorMessage>}
                 </FormItem>
 
                 <FormItem>
@@ -93,7 +93,7 @@ export const Contacts = () => {
                     />
 
                     {formik.touched.reply_to && formik.errors.reply_to &&
-                        <div>{formik.errors.reply_to}</div>}
+                        <ErrorMessage>{formik.errors.reply_to}</ErrorMessage>}
                 </FormItem>
 
 
@@ -106,10 +106,10 @@ export const Contacts = () => {
                     />
 
                     {formik.touched.message && formik.errors.message &&
-                        <div>{formik.errors.message}</div>}
+                        <ErrorMessage>{formik.errors.message}</ErrorMessage>}
                 </FormItem>
 
-                <ButtonBlock>
+                <ButtonsBlock>
                     <ButtonStyle
                         type={"submit"}
                         value="Send"
@@ -126,7 +126,7 @@ export const Contacts = () => {
                             Download CV
                         </a>
                     </ButtonStyle>
-                </ButtonBlock>
+                </ButtonsBlock>
             </FormStyle>
 
             <InfoModal
@@ -134,9 +134,17 @@ export const Contacts = () => {
                 showStyleModal={showStyleModal}
                 onClose={closeInfoModal}
             >
-                Your message has been sent <br/>
-                <span>Thanks</span> for the feedback
+                {/*Your message has been sent <br/>*/}
+                {/*<span>Thanks</span> for the feedback*/}
+
+                <iframe
+                    src="https://yandex.by/map-widget/v1/?ll=27.694352%2C53.855338&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzAwMDExNxIc0JHQtdC70LDRgNGD0YHRjCwg0JzRltC90YHQuiIKDQ5y3EEVZpxXQg%2C%2C&z=10.15"
+                    width="100%" height="100%" frameBorder="1" allowFullScreen={true}
+                    style={{position: "relative", borderRadius: "50px"}}>
+                </iframe>
             </InfoModal>
         </Wrapper>
     );
 };
+
+

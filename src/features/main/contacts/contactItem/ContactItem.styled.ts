@@ -10,14 +10,14 @@ export const Logo = styled.svg`
 `
 
 // ===========================//
-export const ContactItemStyle = styled.div`
+export const ContactItemStyle = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   flex-shrink: 1;
-  
- 
+
+  gap: 10px;
   
   border: 3px solid ${theme.colors.secondary};
   border-radius: 85px;
@@ -28,6 +28,7 @@ export const ContactItemStyle = styled.div`
   min-height: 100px;
   
   margin-bottom: 20px;
+  cursor: pointer;
   transition: .3s;
 
   &:hover{
@@ -40,14 +41,8 @@ export const ContactItemStyle = styled.div`
     transition: .3s;
   }
   
-  a{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    gap: 10px;
-    
+  p{
+    margin: 0;
     color: ${theme.colors.baseColor};
     font-size: 18px;
   }

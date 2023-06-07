@@ -22,7 +22,6 @@ export const ProjectItem: FC<ProjectItemType> = ({title, img, href, description,
     const [showDescription, setShowDescription] = useState(false)
     const [showStyleDescription, setShowStyleDescription] = useState(false)
 
-
     const onClickDescriptionHandler = (showDescription: boolean) => {
         if (!showDescription) {
             setShowDescription(true)
@@ -52,8 +51,8 @@ export const ProjectItem: FC<ProjectItemType> = ({title, img, href, description,
                         {title}
                     </LinkProject>
 
-                    <DescriptionTitle onClick={()=>onClickDescriptionHandler(showDescription)}>
-                        description
+                    <DescriptionTitle onClick={() => onClickDescriptionHandler(showDescription)}>
+                        {showDescription ? "hide description" : "show description"}
                     </DescriptionTitle>
                 </TitleProject>
 

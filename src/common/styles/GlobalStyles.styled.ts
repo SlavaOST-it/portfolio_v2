@@ -10,24 +10,34 @@ export const GlobalStyled = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-  
+
+  *::-webkit-scrollbar {
+    width: 10px;
+    background-color: #565656;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: ${theme.colors.activeColor.primary_color};
+    border-radius: 6px;
+  }
+
   a, a:visited, a:hover {
     text-decoration: none;
     color: ${theme.colors.baseColor};
   }
-  
+
   ul li {
     list-style: none;
   }
-  
-  button{
+
+  button {
     font-size: 16px;
     line-height: 1.7;
     font-weight: 400;
     border: none;
   }
-  
-  p{
+
+  p {
     color: ${theme.colors.secondary};
   }
 
@@ -38,6 +48,5 @@ export const GlobalStyled = createGlobalStyle`
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     line-height: 1.7;
-    height: 100vh;
   }
 `
