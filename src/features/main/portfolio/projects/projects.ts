@@ -1,5 +1,5 @@
 import todo_img from "../../../../assets/images/projectBG/ToDoList.jpg"
-import socialNet_img from "../../../../assets/images/projectBG/shutterstock_403991497-2-768x432-1.jpg"
+import socialNet_img from "../../../../assets/images/projectBG/socialNet.jpg"
 import education_img from "../../../../assets/images/projectBG/educationBG.jpg"
 
 export const projects = [
