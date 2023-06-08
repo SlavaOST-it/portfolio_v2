@@ -16,5 +16,19 @@ export const hiddenDescription = keyframes`
   }
   to {
     opacity: 0;
-  } 
-    `
+  }
+`
+
+
+//============ For Loader ================//
+export const dotLoader = keyframes`
+  50% {
+    transform: translateX(96px);
+  }
+`
+
+export const dotsLoader = keyframes`
+  50% {
+    transform: translateX(-31px)
+  }
+`
