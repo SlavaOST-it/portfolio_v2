@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import ReactDOM from "react-dom";
 
-import {CloseButton, ModalOverlay, ModalWrapper} from './InfoModal.styled';
+import {CloseButton, Content, ModalOverlay, ModalWrapper} from './InfoModal.styled';
 
 
 const modalRoot = document.getElementById('modal')
@@ -16,14 +16,14 @@ type InfoModalProps = {
 export const Modal: FC<InfoModalProps> = ({isOpen, onClose, children, showStyleModal}) => {
     return modalRoot
         ? ReactDOM.createPortal(
-        <ModalOverlay is_open={isOpen} show_styles_modal={showStyleModal}>
-            <div className="overlay" onClick={onClose}/>
-            <ModalWrapper>
-                <CloseButton onClick={onClose}>&times;</CloseButton>
-                <div>{children}</div>
-            </ModalWrapper>
-        </ModalOverlay>,
+            <ModalOverlay is_open={isOpen} show_styles_modal={showStyleModal}>
+                <div className="overlay" onClick={onClose}/>
+                <ModalWrapper>
+                    <CloseButton onClick={onClose}>&times;</CloseButton>
+                    <Content>{children}</Content>
+                </ModalWrapper>
+            </ModalOverlay>,
 
-        modalRoot
-    ) : null
+            modalRoot
+        ) : null
 };

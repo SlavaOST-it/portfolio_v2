@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {FC, useEffect, useRef, useState} from 'react';
 
 import {SocialLinks} from "../leftSidebar/LeftSidebar";
 
@@ -19,9 +19,14 @@ import {
     NavLinkMobile,
     SocialLinksBlock
 } from "./MobileMenu.styled";
+import {ToggleThemeBtn} from "../../common/components/toggleThemeBtn/ToggleThemeBtn";
 
 
-export const MobileMenu = () => {
+type MobileMenuType = {
+    themeValue: string
+    setTheme: () => void
+}
+export const MobileMenu: FC<MobileMenuType> = ({themeValue, setTheme}) => {
     const [isOpen, setIsOpen] = useState(false);
     const menuRef = useRef(null);
 
@@ -55,6 +60,7 @@ export const MobileMenu = () => {
                 <MenuHeader>
                     <CrossIcon onClick={() => setIsOpen(false)}>&times;</CrossIcon>
                 </MenuHeader>
+
                 <MenuBody>
                     <MenuTitle>Menu</MenuTitle>
                     <ul>
@@ -78,6 +84,8 @@ export const MobileMenu = () => {
                             </MenuItem>
                         ))}
                     </ul>
+
+                    <ToggleThemeBtn setTheme={setTheme} themeValue={themeValue}/>
 
                     <SocialLinksBlock>
                         <span>Social</span>

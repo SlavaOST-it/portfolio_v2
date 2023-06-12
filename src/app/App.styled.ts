@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {theme} from "../common/styles/Theme.styled";
+import {darkTheme} from "../common/styles/Theme.styled";
 
 export const AppWrapper = styled.div`
   max-width: 1700px;
@@ -7,7 +7,7 @@ export const AppWrapper = styled.div`
   margin: 0 auto;
   
 
-  @media screen and ${theme.media.mobile} {
+  @media screen and ${darkTheme.media.mobile} {
     padding: 0 5px;
   }
 `

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {theme} from "./Theme.styled";
+import {darkTheme} from "./Theme.styled";
 
 
 export const TitlePage = styled.h2`
@@ -10,8 +10,8 @@ export const TitlePage = styled.h2`
 `
 
 // =======================================//
-export const Wrapper = styled.section`
-  min-height: 100%;
+export const Wrapper = styled.section<{theme: string}>`
+  max-height: 100%;
   padding-bottom: 100px;
   
   margin-bottom: 50px;
@@ -30,7 +30,7 @@ export const Wrapper = styled.section`
   }
 
   span {
-    color: ${theme.colors.activeColor.primary_color};
+    color: ${props => props.theme.colors.activeColor.primary_color};
   }
 
   p {
@@ -42,28 +42,28 @@ export const Wrapper = styled.section`
     line-height: 30px;
   }
 
-  @media screen and ${theme.media.desktop} {
+  @media screen and ${props => props.theme.media.desktop} {
     max-width: 767px;
     margin: 50px auto;
   }
 
-  @media screen and ${theme.media.tablet} {
+  @media screen and ${props => props.theme.media.tablet} {
     max-width: 576px;
     width: 100%;
     padding: 10px;
     margin: 50px auto;
   }
 
-  @media screen and ${theme.media.mobile} {
+  @media screen and ${props => props.theme.media.mobile} {
     max-width: 300px;
     padding: 10px 5px;
     margin: 50px auto;
 
-    h1{
-      font-size: 58px;
-      letter-spacing: 0;
-      line-height: 60px;
-    }
+    //h1{
+    //  font-size: 58px;
+    //  letter-spacing: 0;
+    //  line-height: 60px;
+    //}
     
     h2{
       font-size: 42px;

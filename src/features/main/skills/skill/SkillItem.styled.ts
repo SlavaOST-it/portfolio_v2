@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import {theme} from "../../../../common/styles/Theme.styled";
+import {darkTheme} from "../../../../common/styles/Theme.styled";
 
 
-export const CircleSkill = styled.div`
+export const CircleSkill = styled.div<{theme: string}>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,7 +10,7 @@ export const CircleSkill = styled.div`
   width: 120px;
   height: 150px;
   
-  border: 3px solid ${theme.colors.activeColor.primary_color};
+  border: 3px solid ${props => props.theme.colors.activeColor.primary_color};
   border-radius: 85px;
   padding: 54px 0 48px 0;
   margin-bottom: 20px;  
@@ -19,7 +19,7 @@ export const CircleSkill = styled.div`
     display: block;
     width: 60px;
     height: 60px;    
-    fill: ${theme.colors.baseColor};
+    fill: ${props => props.theme.colors.baseColor};
   }
 `
 

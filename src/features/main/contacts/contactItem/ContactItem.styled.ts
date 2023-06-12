@@ -1,16 +1,16 @@
 import styled from "styled-components";
-import {theme} from "../../../../common/styles/Theme.styled";
+import {darkTheme} from "../../../../common/styles/Theme.styled";
 
 // ===========================//
-export const Logo = styled.svg`
-  fill: ${theme.colors.secondary};
+export const Logo = styled.svg<{theme: string}>`
+  fill: ${props => props.theme.colors.secondary};
   width: 40px;
   height: 40px;
   transition: .3s;
 `
 
 // ===========================//
-export const ContactItemStyle = styled.a`
+export const ContactItemStyle = styled.a<{theme: string}>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,7 +19,7 @@ export const ContactItemStyle = styled.a`
 
   gap: 10px;
   
-  border: 3px solid ${theme.colors.secondary};
+  border: 3px solid ${props => props.theme.colors.secondary};
   border-radius: 85px;
   
   min-width: 200px;
@@ -32,22 +32,22 @@ export const ContactItemStyle = styled.a`
   transition: .3s;
 
   &:hover{
-    border-color:  ${theme.colors.activeColor.primary_color};
+    border-color:  ${props => props.theme.colors.activeColor.primary_color};
     transition: .3s;
   }
   
   &:hover svg{
-    fill: ${theme.colors.activeColor.primary_color};
+    fill: ${props => props.theme.colors.activeColor.primary_color};
     transition: .3s;
   }
   
   p{
     margin: 0;
-    color: ${theme.colors.baseColor};
+    color: ${props => props.theme.colors.baseColor};
     font-size: 18px;
   }
 
-  @media screen and ${theme.media.tablet} {
+  @media screen and ${props => props.theme.media.tablet} {
     max-width: 100%;
   }
 `

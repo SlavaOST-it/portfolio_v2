@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {theme} from "../../../../common/styles/Theme.styled";
+import {darkTheme} from "../../../../common/styles/Theme.styled";
 import {hiddenDescription, showDescription} from "../../../../common/styles/animations/Animation";
 
 
@@ -12,30 +12,30 @@ export const ImageProject = styled.img`
 `
 
 // =======================================//
-export const LinkProject = styled.a`
+export const LinkProject = styled.a<{theme: string}>`
   display: block;
   font-size: 24px;
   font-weight: 300;
 
-  border-bottom: 1px ${theme.colors.background} solid;
+  border-bottom: 1px ${props => props.theme.colors.background} solid;
   transition: .3s;
 
   &:hover {
-    border-color: ${theme.colors.baseColor};
+    border-color: ${props => props.theme.colors.baseColor};
     transition: .3s;
   }
 `
 
 // =======================================//
-export const DescriptionTitle = styled.div`
+export const DescriptionTitle = styled.div<{theme: string}>`
   font-size: 16px;
-  color: ${theme.colors.secondary};
-  border-bottom: 1px ${theme.colors.background} solid;
+  color: ${props => props.theme.colors.secondary};
+  border-bottom: 1px ${props => props.theme.colors.background} solid;
   cursor: pointer;
   transition: .3s;
 
   &:hover {
-    border-color: ${theme.colors.baseColor};
+    border-color: ${props => props.theme.colors.baseColor};
     transition: .3s;
   }
 `
@@ -45,7 +45,6 @@ type DescriptionType = {
     show_styles_description: boolean
 }
 export const Description = styled.p<DescriptionType>`
-  color: ${theme.colors.secondary};
   margin-top: 8px;
 
   p {
@@ -92,4 +91,7 @@ export const BodyProject = styled.a<BodyProjectType>`
 export const ProjectWrapper = styled.div`
   max-width: 100%;
   margin-bottom: 50px;
+
+  position: relative;
+  z-index: 2;
 `

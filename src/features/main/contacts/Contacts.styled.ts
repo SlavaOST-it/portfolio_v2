@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import {theme} from "../../../common/styles/Theme.styled";
-
 
 
 export const ErrorMessage = styled.p`
@@ -9,7 +7,7 @@ export const ErrorMessage = styled.p`
 `
 
 // ==============================//
-export const FormItem = styled.div`
+export const FormItem = styled.div<{theme: string}>`
   display: flex;
   flex-direction: column;
 
@@ -28,7 +26,7 @@ export const FormItem = styled.div`
   input, textarea {
     outline: none;
     display: block;
-    color: ${theme.colors.baseColor};
+    color: ${props => props.theme.colors.baseColor};
     max-width: 95%;
     border: none;
     background: none;
@@ -41,9 +39,9 @@ export const FormItem = styled.div`
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus {
-    -webkit-text-fill-color: ${theme.colors.baseColor};
-    -webkit-box-shadow: 0 0 0px 40rem ${theme.colors.background} inset;
-    color: ${theme.colors.baseColor};
+    -webkit-text-fill-color: ${props => props.theme.colors.baseColor};
+    -webkit-box-shadow: 0 0 0 40rem ${props => props.theme.colors.background} inset;
+    color: ${props => props.theme.colors.baseColor};
   }
 
   textarea {
@@ -51,7 +49,7 @@ export const FormItem = styled.div`
     min-width: 100%;
     height: 150px;
     resize: none;
-    border-bottom: 0.5px solid ${theme.colors.secondary};
+    border-bottom: 0.5px solid ${props => props.theme.colors.secondary};
   }
 
   input:focus, textarea:focus {
@@ -78,7 +76,7 @@ export const ButtonsBlock = styled.div`
 
 
 // ==============================//
-export const ContactItemsBlock = styled.section`
+export const ContactItemsBlock = styled.ul<{theme: string}>`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -86,7 +84,7 @@ export const ContactItemsBlock = styled.section`
   margin-bottom: 20px;
 
   
-  @media screen and ${theme.media.tablet} {
+  @media screen and ${props => props.theme.media.tablet} {
     display: flex;
     flex-direction: column;
     justify-content: center;

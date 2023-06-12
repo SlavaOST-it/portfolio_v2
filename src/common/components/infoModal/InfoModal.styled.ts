@@ -1,7 +1,6 @@
 import styled from "styled-components";
-
-import {theme} from "../../styles/Theme.styled";
 import {hiddenDescription, showDescription} from "../../styles/animations/Animation";
+
 
 type ModalOverlayType = {
     is_open: boolean,
@@ -46,11 +45,11 @@ export const ModalWrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  background-color: #1c1b1b;
+  background-color: ${props => props.theme.colors.activeColor.dark_color};
   border-radius: 50px;  
   
-  max-width: 600px;
-  max-height: 350px;
+  max-width: 700px;
+  max-height: 450px;
   width: 100%;
   height: 100%;
   
@@ -60,35 +59,55 @@ export const ModalWrapper = styled.div`
   position: relative;
   
   z-index: 999;
+`
 
-  div {
-    width: 100%;
-    height: 100%;
+
+// ==============================//
+export const Content = styled.div<{theme: string}>`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  width: 100%;
+  height: 100%;
+  
+  text-align: center;
+
+  p{
     font-size: 34px;
-    color: ${theme.colors.baseColor};
-    text-align: center;
+    color: ${props => props.theme.colors.baseColor};
+  }
+  span {
+    color: ${props => props.theme.colors.activeColor.primary_color};
   }
 `
 
 
 // ==============================//
-export const CloseButton = styled.button`
+export const CloseButton = styled.button<{theme: string}>`
   position: absolute;
   top: -36px;
   right: -28px;
- 
+
   width: 50px;
   height: 50px;
-  
+
   font-size: 30px;
-  color: ${theme.colors.activeColor.primary_color};
-  background-color: #1c1b1b;
+  color: ${props => props.theme.colors.baseColor};
+  background-color: ${props => props.theme.colors.activeColor.dark_color};
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  
-  
-  @media screen and ${theme.media.tablet}{
+  transition: .3s;
+
+  &:hover {
+    color: ${props => props.theme.colors.activeColor.primary_color};
+    transition: .3s;
+  }
+
+
+  @media screen and ${props => props.theme.media.tablet} {
     top: -56px;
     right: 3px;
   }

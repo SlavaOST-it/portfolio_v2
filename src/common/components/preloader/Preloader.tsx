@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Dot, Dots, Gooey} from './Loader.styled';
+import {ContainerDots, Dot, Dots, Gooey} from './Loader.styled';
 
 
 export const Preloader = () => {
@@ -22,12 +22,14 @@ export const Preloader = () => {
 
     return (
         <Gooey is_close={onClose} hide_loader_style={hideLoaderStyle}>
-            <Dot></Dot>
-            <Dots>
-                <span></span>
-                <span></span>
-                <span></span>
-            </Dots>
+            <ContainerDots>
+                <Dot></Dot>
+                <Dots>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </Dots>
+            </ContainerDots>
         </Gooey>
     );
 };

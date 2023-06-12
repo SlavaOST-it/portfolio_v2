@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {FC} from 'react';
 
 import {linksMenu} from "../../common/components/links/links";
 import {ListItem, LogoLink, NameLink, NavLinkStyle, NavStyle, WrapperRightBar} from "./RightSidebar.styled";
+import {ToggleThemeBtn} from "../../common/components/toggleThemeBtn/ToggleThemeBtn";
 
 
-export const RightSidebar = () => {
+type RightSidebarType = {
+    themeValue: string
+    setTheme: ()=>void
+}
+export const RightSidebar: FC<RightSidebarType> = ({themeValue, setTheme}) => {
     return (
         <NavStyle>
             <WrapperRightBar>
@@ -27,6 +32,7 @@ export const RightSidebar = () => {
                         </NavLinkStyle>
                     </ListItem>
                 )}
+                <ToggleThemeBtn themeValue={themeValue} setTheme={setTheme}/>
             </WrapperRightBar>
         </NavStyle>
     );

@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import styled from "styled-components";
 
-import {theme} from "../../styles/Theme.styled";
+import {darkTheme} from "../../styles/Theme.styled";
 
 
 type NamePageType = {
@@ -21,13 +21,13 @@ export const NamePage: FC<NamePageType> = ({nameBlock, svgImg}) => {
     );
 };
 
-const NameBlockStyle = styled.div`
+const NameBlockStyle = styled.div<{theme: string}>`
   font-size: 12px;
-  color: ${theme.colors.baseColor};
+  color: ${props => props.theme.colors.baseColor};
   text-transform: uppercase;
   font-weight: 300;
   
-  border: 1px solid ${theme.colors.secondary};
+  border: 1px solid ${props => props.theme.colors.secondary};
   padding: 9px 20px;
   border-radius: 30px;
   margin-bottom: 40px;
@@ -39,7 +39,7 @@ const NameBlockStyle = styled.div`
     height: 16px;
     margin-right: 10px;   
     
-    fill: ${theme.colors.baseColor};
+    fill: ${props => props.theme.colors.baseColor};
   }
   
   h3{

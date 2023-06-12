@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import * as Yup from 'yup';
 import {useFormik} from 'formik';
-import emailjs from '@emailjs/browser';
+import emailJs from '@emailjs/browser';
 
 import sprite from "../../../assets/icons/sprite.svg";
 
@@ -35,7 +35,7 @@ export const Contacts = () => {
 
         }),
         onSubmit: (values) => {
-            emailjs.send(process.env.REACT_APP_FORMIK_SERVICE_ID!, process.env.REACT_APP_FORMIK_TEMPLATE_ID!, values, process.env.REACT_APP_FORMIK_USER_ID)
+            emailJs.send(process.env.REACT_APP_FORMIK_SERVICE_ID!, process.env.REACT_APP_FORMIK_TEMPLATE_ID!, values, process.env.REACT_APP_FORMIK_USER_ID)
                 .then((result: any) => {
                     console.log(result.text);
                 }, (error: any) => {
@@ -43,7 +43,8 @@ export const Contacts = () => {
                 });
             formik.resetForm()
             openModalHandler("text")
-            setTimeout(closeInfoModal, 7000)
+           setTimeout(closeInfoModal, 7000)
+
         }
     })
 
@@ -138,8 +139,9 @@ export const Contacts = () => {
                 showStyleModal={showStyleModal}
                 onClose={() => closeInfoModal("text")}
             >
-                Your message has been sent <br/>
-                <span>Thanks</span> for the feedback
+                <p>Your message has been sent <br/>
+                    <span>Thanks</span> for the feedback
+                </p>
             </Modal>
 
             <Modal

@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import {theme} from "../../common/styles/Theme.styled";
 
 
-export const WrapperMain = styled.main`
+export const WrapperMain = styled.main<{theme: string}>`
   margin-top: 50px;
   margin-left: 450px;
   margin-right: 150px;
@@ -10,15 +9,15 @@ export const WrapperMain = styled.main`
   gap: 150px;
 
   
-  @media screen and ${theme.media.desktop} {
+  @media screen and ${props => props.theme.media.desktop} {
     margin: 50px auto;
   }
 
-  @media screen and ${theme.media.tablet} {
+  @media screen and ${props => props.theme.media.tablet} {
     margin: 0 auto;
   }
 
-  @media screen and ${theme.media.mobile} {
+  @media screen and ${props => props.theme.media.mobile} {
     margin: 0 auto;
   }
 `

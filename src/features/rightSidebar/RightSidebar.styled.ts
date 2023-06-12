@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import {theme} from "../../common/styles/Theme.styled";
+import {darkTheme} from "../../common/styles/Theme.styled";
 import {Link} from "react-scroll"
 
 
-export const LogoLink = styled.svg`
+export const LogoLink = styled.svg<{theme: string}>`
   width: 20px;
   height: 20px;
-  fill: ${theme.colors.secondary};
+  fill: ${props => props.theme.colors.secondary};
   transition: .3s;
 `
 
@@ -42,12 +42,12 @@ export const NameLink = styled.span`
 `
 
 //===================================//
-export const NavLinkStyle = styled(Link)`
+export const NavLinkStyle = styled(Link)<{theme: string}>`
   position: relative;
   
   &:hover, &.active{
     ${LogoLink} {
-      fill: ${theme.colors.activeColor.primary_color};
+      fill: ${props => props.theme.colors.activeColor.primary_color};
       cursor: pointer;
     }
   }
@@ -78,16 +78,14 @@ export const WrapperRightBar = styled.ul`
 
   border-radius: 30px;
   border: 1px solid #565656;
-
   
-
   gap: 20px;
   z-index: 20;
   
 `
 
 //===================================//
-export const NavStyle = styled.nav`
+export const NavStyle = styled.nav<{theme: string}>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,7 +99,7 @@ export const NavStyle = styled.nav`
     right: calc(100vw - 50% - 850px);
   }
   
-  @media screen and ${theme.media.desktop}{
+  @media screen and ${props => props.theme.media.desktop}{
     display: none;
   }
 `

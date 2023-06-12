@@ -1,8 +1,7 @@
 import {createGlobalStyle} from "styled-components";
-import {theme} from "./Theme.styled";
 
 
-export const GlobalStyled = createGlobalStyle`
+export const GlobalStyled = createGlobalStyle<{ theme: any}>`
   *,
   *::before,
   *::after {
@@ -17,13 +16,13 @@ export const GlobalStyled = createGlobalStyle`
   }
 
   *::-webkit-scrollbar-thumb {
-    background-color: ${theme.colors.activeColor.primary_color};
+    background-color: ${props => props.theme.colors.activeColor.primary_color};
     border-radius: 6px;
   }
 
   a, a:visited, a:hover {
     text-decoration: none;
-    color: ${theme.colors.baseColor};
+    color: ${props => props.theme.colors.baseColor};
   }
 
   ul li {
@@ -38,13 +37,13 @@ export const GlobalStyled = createGlobalStyle`
   }
 
   p {
-    color: ${theme.colors.secondary};
+    color: ${props => props.theme.colors.secondary};
   }
 
   body {
-    background-color: ${theme.colors.background};
+    background-color: ${props => props.theme.colors.background};
 
-    color: ${theme.colors.baseColor};
+    color: ${props => props.theme.colors.baseColor};
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     line-height: 1.7;

@@ -1,38 +1,38 @@
 import styled from "styled-components";
-import {theme} from "../../common/styles/Theme.styled";
 import {Link} from "react-scroll";
 
-export const BurgerButton = styled.button`
+
+export const BurgerButton = styled.button<{theme: string}>`
   position: fixed;
   right: 20px;
   top: 20px;
   width: 44px;
   height: 44px;
 
-  border: 1px solid ${theme.colors.secondary};
+  border: 1px solid ${props => props.theme.colors.secondary};
   border-radius: 50%;
 
-  background-color: ${theme.colors.background};
+  background-color: ${props => props.theme.colors.background};
 
   cursor: pointer;
   transition: .3s;
   z-index: 999;
 
   &:hover {
-    border-color: ${theme.colors.activeColor.primary_color};
+    border-color: ${props => props.theme.colors.activeColor.primary_color};
     transition: .3s;
   }
 ;
 
   &:hover span {
-    background-color: ${theme.colors.activeColor.primary_color};
+    background-color: ${props => props.theme.colors.activeColor.primary_color};
   }
 
   span {
     width: 20px;
     display: block;
     height: 2px;
-    background: #fff;
+    background: ${props => props.theme.colors.baseColor};
     transition: .3s;
 
     &:first-child {
@@ -43,7 +43,6 @@ export const BurgerButton = styled.button`
     left: 11px;
     bottom: 16px;
   }
-
 `
 
 //===================================//
@@ -55,30 +54,31 @@ export const LinkItem = styled.div`
 `
 
 //===================================//
-export const SocialLinksBlock = styled.div`
+export const SocialLinksBlock = styled.div<{theme: string}>`
   margin-top: 50px;
 
   span {
     display: inline-block;
     margin-bottom: 10px;
-    color: ${theme.colors.secondary};
+    color: ${props => props.theme.colors.secondary};
   }
 `
 
 //===================================//
-export const MenuWrapper = styled.div`
+export const MenuWrapper = styled.div<{theme: string}>`
   position: fixed;
   top: 0;
   right: -300px;
   width: 300px;
   height: 100vh;
-  background-color: ${theme.colors.background};
+  background-color: ${props => props.theme.colors.background};
   z-index: 999;
   transition: all 0.3s ease-in-out;
 
   &.open {
     right: 0;
   }
+  
 `
 
 //===================================//
@@ -117,41 +117,41 @@ export const MenuItem = styled.li`
 `
 
 //===================================//
-export const Icon = styled.svg`
+export const Icon = styled.svg<{theme: string}>`
   width: 18px;
   height: 18px;
   margin-right: 25px;
-  fill: ${theme.colors.secondary};
+  fill: ${props => props.theme.colors.secondary};
 `
 
 
 //===================================//
-export const NameLinkMobile = styled.span`
+export const NameLinkMobile = styled.span<{theme: string}>`
   font-weight: 500;
-  color: ${theme.colors.secondary};
+  color: ${props => props.theme.colors.secondary};
 `;
 
 
 //===================================//
-export const NavLinkMobile = styled(Link)`
+export const NavLinkMobile = styled(Link)<{theme: string}>`
   display: flex;
   align-items: center;
 
   &:hover, &.active {
     ${Icon} {
-      fill: ${theme.colors.activeColor.primary_color};
+      fill: ${props => props.theme.colors.activeColor.primary_color};
       cursor: pointer;
     }
 
     ${NameLinkMobile} {
-      color: ${theme.colors.activeColor.primary_color};
+      color: ${props => props.theme.colors.activeColor.primary_color};
     }
   }
 `
 
 
 //===================================//
-export const MobileMenuStyle = styled.div<{ isOpen: boolean }>`
+export const MobileMenuStyle = styled.div<{ isOpen: boolean, theme: string}>`
   display: none;
 
   .overlay {
@@ -165,7 +165,7 @@ export const MobileMenuStyle = styled.div<{ isOpen: boolean }>`
     display: ${({isOpen}) => (isOpen ? 'block' : 'none')};
   }
 
-  @media screen and ${theme.media.desktop} {
+  @media screen and ${props => props.theme.media.desktop} {
     display: block;
   }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 import {AppWrapper} from "./App.styled";
 
@@ -8,17 +8,40 @@ import {Particle} from "../common/components/particle/Particle";
 import {LeftSidebar} from "../features/leftSidebar/LeftSidebar";
 import {RightSidebar} from "../features/rightSidebar/RightSidebar";
 import {Preloader} from "../common/components/preloader/Preloader";
+import {darkTheme, lightTheme} from '../common/styles/Theme.styled';
+import {ThemeProvider} from "styled-components";
+import {GlobalStyled} from '../common/styles/GlobalStyles.styled';
 
 
 export const App = () => {
+    const [theme, setTheme] = useState("dark");
+
+    useEffect(() => {
+        const storedThemeValue = localStorage.getItem('currentThemeApp');
+
+        if (storedThemeValue) {
+            setTheme(storedThemeValue);
+        }
+    }, []);
+
+    const switchTheme = () => {
+        const newTheme = theme === "dark" ? "light" : "dark";
+        setTheme(newTheme);
+        localStorage.setItem('currentThemeApp', newTheme);
+    };
+
     return (
-        <AppWrapper>
-            <Preloader/>
-            <Particle/>
-            <MobileMenu/>
-            <LeftSidebar/>
-            <Main/>
-            <RightSidebar/>
-        </AppWrapper>
+        <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
+            <GlobalStyled theme={theme === "dark" ? darkTheme : lightTheme}/>
+
+            <AppWrapper>
+                <Preloader/>
+                <Particle/>
+                <MobileMenu themeValue={theme} setTheme={switchTheme}/>
+                <LeftSidebar/>
+                <Main/>
+                <RightSidebar themeValue={theme} setTheme={switchTheme}/>
+            </AppWrapper>
+        </ThemeProvider>
     );
 }

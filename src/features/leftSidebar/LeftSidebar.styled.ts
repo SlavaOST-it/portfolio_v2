@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {theme} from "../../common/styles/Theme.styled";
+import {darkTheme} from "../../common/styles/Theme.styled";
 
 
 export const Header = styled.div`
@@ -52,12 +52,12 @@ export const Description = styled.section`
   p {
     margin-bottom: 25px;
     font-size: 14px;
-    color: ${theme.colors.secondary};
+    color: ${darkTheme.colors.secondary};
   }
 `
 
 
-export const SocialLinksStyled = styled.div<{ sizeSVG: string, border: boolean }>`
+export const SocialLinksStyled = styled.div<{ sizeSVG: string, border: boolean, theme: string }>`
   margin-bottom: 30px;
 
   ul {
@@ -81,31 +81,32 @@ export const SocialLinksStyled = styled.div<{ sizeSVG: string, border: boolean }
     width: 50px;
     height: 50px;
 
-    border: ${({border}) => (border ? `2px solid ${theme.colors.secondary}` : "none")};
+    border: ${({border}) => (border ? "2px solid" : "none")};
+    border-color: ${props => props.theme.colors.secondary};
     border-radius: 50%;
 
     transition: .3s;
   }
 
   li:hover a {
-    border-color: ${theme.colors.activeColor.primary_color};
+    border-color: ${props => props.theme.colors.activeColor.primary_color};
     transition: .3s;
   }
 
   li:hover svg {
-    fill: ${theme.colors.activeColor.primary_color};
+    fill: ${props => props.theme.colors.activeColor.primary_color};
     transition: .3s;
   }
 
   svg {
     width: ${({sizeSVG}) => (sizeSVG || "20px")};
     height: ${({sizeSVG}) => (sizeSVG || "20px")};
-    fill: ${theme.colors.secondary};
+    fill: ${props => props.theme.colors.secondary};
     transition: .3s;
   }
 `
 
-export const LeftSideBarWrapper = styled.aside`
+export const LeftSideBarWrapper = styled.aside<{theme: string}>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -130,7 +131,7 @@ export const LeftSideBarWrapper = styled.aside`
     left: calc(100vw - 50% - 850px);
   }
 
-  @media screen and ${theme.media.desktop} {
+  @media screen and ${props => props.theme.media.desktop} {
     position: relative;
     max-width: 767px;
     left: 0;
@@ -139,12 +140,12 @@ export const LeftSideBarWrapper = styled.aside`
     transform: translateY(0);
   }
 
-  @media screen and ${theme.media.tablet} {
+  @media screen and ${props => props.theme.media.tablet} {
     max-width: 576px;
     z-index: 1;
   }
 
-  @media screen and ${theme.media.mobile} {
+  @media screen and ${props => props.theme.media.mobile} {
     max-width: 300px;
     width: 100%;
   }
