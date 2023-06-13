@@ -96,7 +96,7 @@ export const CrossIcon = styled.span`
 
 //===================================//
 export const MenuBody = styled.nav`
-  padding: 40px 70px;
+  padding: 20px 70px;
 
 `
 
