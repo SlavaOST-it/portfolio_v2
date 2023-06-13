@@ -7,7 +7,6 @@ export const WrapperMain = styled.main<{theme: string}>`
   margin-right: 150px;
 
   gap: 150px;
-
   
   @media screen and ${props => props.theme.media.desktop} {
     margin: 50px auto;

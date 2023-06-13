@@ -8,10 +8,10 @@ export const Prof = styled.h1`
   animation-delay: 3500ms;
 `
 
+//=========================//
 export const Name = styled.div<{theme: string}>`
   font-size: 78px;
-
-
+  
   @media screen and ${props => props.theme.media.mobile} {
     max-width: 300px;
     padding: 10px 5px;
@@ -23,5 +23,4 @@ export const Name = styled.div<{theme: string}>`
       line-height: 60px;
     }
   }
-
 `

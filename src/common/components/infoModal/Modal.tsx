@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import ReactDOM from "react-dom";
 
-import {CloseButton, Content, ModalOverlay, ModalWrapper} from './InfoModal.styled';
+import {CloseButton, Content, ModalOverlay, ModalWrapper} from './Modal.styled';
 
 
 const modalRoot = document.getElementById('modal')

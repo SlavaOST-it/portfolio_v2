@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {darkTheme} from "../../../../common/styles/Theme.styled";
 
 // ===========================//
 export const Logo = styled.svg<{theme: string}>`

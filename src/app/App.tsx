@@ -1,6 +1,9 @@
 import React, {useEffect, useState} from 'react';
+import {ThemeProvider} from "styled-components";
 
 import {AppWrapper} from "./App.styled";
+import {GlobalStyled} from '../common/styles/GlobalStyles.styled';
+import {darkTheme, lightTheme} from '../common/styles/Theme.styled';
 
 import {Main} from '../features/main/Main';
 import {MobileMenu} from "../features/mobileMenu/MobileMenu";
@@ -8,9 +11,6 @@ import {Particle} from "../common/components/particle/Particle";
 import {LeftSidebar} from "../features/leftSidebar/LeftSidebar";
 import {RightSidebar} from "../features/rightSidebar/RightSidebar";
 import {Preloader} from "../common/components/preloader/Preloader";
-import {darkTheme, lightTheme} from '../common/styles/Theme.styled';
-import {ThemeProvider} from "styled-components";
-import {GlobalStyled} from '../common/styles/GlobalStyles.styled';
 
 
 export const App = () => {
@@ -42,6 +42,7 @@ export const App = () => {
                 <Main/>
                 <RightSidebar themeValue={theme} setTheme={switchTheme}/>
             </AppWrapper>
+
         </ThemeProvider>
     );
 }

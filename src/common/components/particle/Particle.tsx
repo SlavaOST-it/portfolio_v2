@@ -1,8 +1,7 @@
 import {useCallback} from "react";
-import type {Container, Engine} from "tsparticles-engine";
+import type {Engine} from "tsparticles-engine";
 import Particles from "react-particles";
 import {loadFull} from "tsparticles";
-import {darkTheme} from "../../styles/Theme.styled";
 
 
 export const Particle = () => {
@@ -42,7 +41,7 @@ export const Particle = () => {
                         width: 1,
                     },
                     collisions: {
-                        enable: true,
+                        enable: false,
                     },
                     move: {
                         direction: "none",
@@ -50,8 +49,8 @@ export const Particle = () => {
                         outModes: {
                             default: "out",
                         },
-                        random: true,
-                        speed: 1,
+                        random: false,
+                        speed: 0.3,
                         straight: true,
                     },
                     number: {

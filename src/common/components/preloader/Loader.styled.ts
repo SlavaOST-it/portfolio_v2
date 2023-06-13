@@ -1,13 +1,8 @@
 import styled from "styled-components";
-
-import {darkTheme} from "../../styles/Theme.styled";
 import {dotLoader, dotsLoader, hiddenDescription} from "../../styles/animations/Animation";
 
 
-type GooeyType = {
-    is_close: boolean
-    hide_loader_style: boolean
-}
+
 export const Gooey = styled.div<{hide_loader_style: boolean, is_close: boolean, theme: string}>`
   display: ${({is_close}) => (is_close ? 'flex' : 'none')};
   align-items: center;

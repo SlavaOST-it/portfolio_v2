@@ -1,6 +1,5 @@
-import styled from "styled-components";
-import {darkTheme} from "../../common/styles/Theme.styled";
 import {Link} from "react-scroll"
+import styled from "styled-components";
 
 
 export const LogoLink = styled.svg<{theme: string}>`
@@ -11,22 +10,23 @@ export const LogoLink = styled.svg<{theme: string}>`
 `
 
 //===================================//
-export const NameLink = styled.span`
+export const NameLink = styled.span<{theme: string}>`
   display: block;
   position: absolute;
   right: 190%;
   transition: .3s;
-  
-  font-size: 12px;
 
+  font-size: 12px;
+  color: #fff;
+  
   padding: 3px 8px;
   border-radius: 5px;
   background-color: #404042;
-  
+
   visibility: hidden;
   opacity: 0;
-  
-  &:before{
+
+  &:before {
     content: '';
     width: 10px;
     height: 10px;
@@ -98,8 +98,8 @@ export const NavStyle = styled.nav<{theme: string}>`
   @media screen and (min-width: 1700px) {
     right: calc(100vw - 50% - 850px);
   }
-  
-  @media screen and ${props => props.theme.media.desktop}{
+
+  @media screen and ${props => props.theme.media.desktop} {
     display: none;
   }
 `

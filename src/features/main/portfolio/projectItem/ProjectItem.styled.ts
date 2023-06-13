@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {darkTheme} from "../../../../common/styles/Theme.styled";
 import {hiddenDescription, showDescription} from "../../../../common/styles/animations/Animation";
 
 

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {darkTheme} from "../../styles/Theme.styled";
 
 
 export const ButtonStyle = styled.button<{theme: string}>`
@@ -32,7 +31,7 @@ export const ButtonStyle = styled.button<{theme: string}>`
   }
   
   a{
-    color: ${props => props.theme.colors.activeColor.dark_color};
+    color: ${props => props.theme.colors.baseColor};
     text-align: center;
   }
 

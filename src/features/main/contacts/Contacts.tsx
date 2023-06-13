@@ -9,9 +9,10 @@ import {PATH} from "../../../utils/routes/routes";
 
 import {ContactItem} from "./contactItem/ContactItem";
 import {Modal} from "../../../common/components/infoModal/Modal";
-import {ButtonStyle} from "../../../common/components/button/Button";
 import {NamePage} from "../../../common/components/nameBlock/NameBlock";
+
 import {TitlePage, Wrapper} from "../../../common/styles/Wrapper.styled";
+import {ButtonStyle} from "../../../common/components/button/Button.styled";
 import {ButtonsBlock, ContactItemsBlock, ErrorMessage, FormItem, FormStyle} from './Contacts.styled';
 
 

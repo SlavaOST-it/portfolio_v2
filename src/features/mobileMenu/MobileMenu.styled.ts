@@ -78,7 +78,6 @@ export const MenuWrapper = styled.div<{theme: string}>`
   &.open {
     right: 0;
   }
-  
 `
 
 //===================================//
@@ -87,7 +86,6 @@ export const MenuHeader = styled.div`
   justify-content: flex-end;
   align-items: center;
   padding: 20px;
-
 `
 
 //===================================//

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {darkTheme} from "./Theme.styled";
 
 
 export const TitlePage = styled.h2`
@@ -58,12 +57,6 @@ export const Wrapper = styled.section<{theme: string}>`
     max-width: 300px;
     padding: 10px 5px;
     margin: 50px auto;
-
-    //h1{
-    //  font-size: 58px;
-    //  letter-spacing: 0;
-    //  line-height: 60px;
-    //}
     
     h2{
       font-size: 42px;

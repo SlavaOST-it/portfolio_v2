@@ -1,5 +1,5 @@
-import sprite from "../../../assets/icons/sprite.svg";
 import {PATH} from "../../../utils/routes/routes";
+import sprite from "../../../assets/icons/sprite.svg";
 
 
 export const linksLeftSideBarSVG = [

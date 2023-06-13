@@ -20,6 +20,7 @@ export const Header = styled.div`
   }
 `
 
+// =======================//
 export const Avatar = styled.img`
   border-radius: 30px;
 
@@ -30,6 +31,7 @@ export const Avatar = styled.img`
   margin-bottom: 30px;
 `
 
+// =======================//
 export const Description = styled.section`
   display: flex;
   flex-direction: column;
@@ -56,7 +58,7 @@ export const Description = styled.section`
   }
 `
 
-
+// =======================//
 export const SocialLinksStyled = styled.div<{ sizeSVG: string, border: boolean, theme: string }>`
   margin-bottom: 30px;
 
@@ -106,6 +108,7 @@ export const SocialLinksStyled = styled.div<{ sizeSVG: string, border: boolean, 
   }
 `
 
+// =======================//
 export const LeftSideBarWrapper = styled.aside<{theme: string}>`
   display: flex;
   flex-direction: column;

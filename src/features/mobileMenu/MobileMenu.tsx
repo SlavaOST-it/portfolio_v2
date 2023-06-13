@@ -70,7 +70,7 @@ export const MobileMenu: FC<MobileMenuType> = ({themeValue, setTheme}) => {
                                     to={el.href}
                                     spy={true}
                                     offset={-40}
-                                    duration={1200}
+                                    duration={2500}
                                     activeClass="active"
                                     smooth={"easeInOutQuart"}
                                     onClick={() => setIsOpen(false)}

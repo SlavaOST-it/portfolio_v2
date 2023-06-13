@@ -1,8 +1,8 @@
 import React, {FC} from 'react';
 
 import {linksMenu} from "../../common/components/links/links";
-import {ListItem, LogoLink, NameLink, NavLinkStyle, NavStyle, WrapperRightBar} from "./RightSidebar.styled";
 import {ToggleThemeBtn} from "../../common/components/toggleThemeBtn/ToggleThemeBtn";
+import {ListItem, LogoLink, NameLink, NavLinkStyle, NavStyle, WrapperRightBar} from "./RightSidebar.styled";
 
 
 type RightSidebarType = {
@@ -18,7 +18,7 @@ export const RightSidebar: FC<RightSidebarType> = ({themeValue, setTheme}) => {
                         <NavLinkStyle to={el.href}
                                       spy={true}
                                       offset={-50}
-                                      duration={1200}
+                                      duration={2500}
                                       activeClass="active"
                                       smooth={"easeInOutQuart"}
                         >

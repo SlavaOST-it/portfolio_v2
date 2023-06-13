@@ -4,7 +4,7 @@ import {animateScroll as scroll} from "react-scroll";
 import avatar from "../../assets/images/me.jpg"
 import sprite from "../../assets/icons/sprite.svg"
 
-import {ButtonStyle} from "../../common/components/button/Button";
+import {ButtonStyle} from "../../common/components/button/Button.styled";
 import {linksLeftSideBarSVG} from "../../common/components/links/links";
 import {Avatar, Description, Header, LeftSideBarWrapper, SocialLinksStyled} from './LeftSidebar.styled';
 
