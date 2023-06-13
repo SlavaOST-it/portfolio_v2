@@ -31,7 +31,7 @@ export const ButtonStyle = styled.button<{theme: string}>`
   }
   
   a{
-    color: ${props => props.theme.colors.baseColor};
+    color: #000;
     text-align: center;
   }
 
