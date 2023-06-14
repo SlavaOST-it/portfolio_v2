@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
 
+export const Prof = styled.h1`
+  
+`
+
+
 //=========================//
 export const Name = styled.div<{theme: string}>`
   font-size: 78px;
@@ -11,7 +16,7 @@ export const Name = styled.div<{theme: string}>`
     font-size: 60px;
     line-height: 60px;
 
-    h1 {
+    ${Prof} {
       font-size: 52px;
       line-height: 60px;
     }

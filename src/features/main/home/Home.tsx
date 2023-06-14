@@ -4,7 +4,7 @@ import sprite from "../../../assets/icons/sprite.svg"
 
 import {PATH} from "../../../utils/routes/routes";
 
-import {Name} from "./Home.styled";
+import {Name, Prof} from "./Home.styled";
 import {Wrapper} from "../../../common/styles/Wrapper.styled";
 import {NamePage} from "../../../common/components/nameBlock/NameBlock";
 import {EffectAnimation} from "../../../common/components/effectAnimation/EffectAnimation";
@@ -19,7 +19,7 @@ export const Home = () => {
                 <Name>Hi, I'm <span>Slava</span>,
                     <br/>
                     <EffectAnimation direction={"right"}>
-                        <h1>Front-end Developer</h1>
+                        <Prof>Front-end Developer</Prof>
                     </EffectAnimation>
                 </Name>
 
