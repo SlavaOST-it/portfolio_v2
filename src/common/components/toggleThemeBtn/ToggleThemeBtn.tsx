@@ -1,27 +1,36 @@
 import React from 'react';
 
 import sprite from "../../../assets/icons/sprite.svg"
-import {Icon, ToggleBtnWrapper} from "./ToggleThemeBtn.styled";
+import {Icon, NameTheme, SelectThemeBtn, ToggleBtnWrapper} from "./ToggleThemeBtn.styled";
 
 
 type ToggleThemeBtnType = {
     themeValue: string
-    setTheme: () => void
+    setTheme: (theme: "light" | "dark") => void
 }
 export const ToggleThemeBtn = ({themeValue, setTheme}: ToggleThemeBtnType) => {
     return (
         <ToggleBtnWrapper>
-            <button onClick={setTheme}>
+            <SelectThemeBtn onClick={() => setTheme("dark")}>
+                <NameTheme>
+                    Light
+                </NameTheme>
+
                 <Icon themeValue={themeValue === "light"}>
                     <use xlinkHref={`${sprite}#sun`}/>
                 </Icon>
-            </button>
 
-            <button onClick={setTheme}>
+            </SelectThemeBtn>
+
+            <SelectThemeBtn onClick={() => setTheme("light")}>
+                <NameTheme>
+                    Dark
+                </NameTheme>
+
                 <Icon themeValue={themeValue === "dark"}>
                     <use xlinkHref={`${sprite}#moon`}/>
                 </Icon>
-            </button>
+            </SelectThemeBtn>
         </ToggleBtnWrapper>
     );
 };

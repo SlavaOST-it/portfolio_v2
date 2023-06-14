@@ -7,7 +7,7 @@ import {ListItem, LogoLink, NameLink, NavLinkStyle, NavStyle, WrapperRightBar} f
 
 type RightSidebarType = {
     themeValue: string
-    setTheme: ()=>void
+    setTheme: (theme: "light" | "dark")=>void
 }
 export const RightSidebar: FC<RightSidebarType> = ({themeValue, setTheme}) => {
     return (

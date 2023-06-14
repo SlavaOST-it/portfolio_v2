@@ -25,8 +25,8 @@ export const App = () => {
         }
     }, []);
 
-    const switchTheme = () => {
-        const newTheme = theme === "dark" ? "light" : "dark";
+    const switchTheme = (themeValue: "light" | "dark") => {
+        const newTheme = themeValue === "dark" ? "light" : "dark";
         setTheme(newTheme);
         localStorage.setItem('currentThemeApp', newTheme);
     };

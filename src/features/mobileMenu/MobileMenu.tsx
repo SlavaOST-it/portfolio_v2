@@ -24,7 +24,7 @@ import {ToggleThemeBtn} from "../../common/components/toggleThemeBtn/ToggleTheme
 
 type MobileMenuType = {
     themeValue: string
-    setTheme: () => void
+    setTheme: (theme: "light" | "dark") => void
 }
 export const MobileMenu: FC<MobileMenuType> = ({themeValue, setTheme}) => {
     const [isOpen, setIsOpen] = useState(false);
