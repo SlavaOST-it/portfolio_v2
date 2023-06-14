@@ -50,7 +50,7 @@ export const Particle = () => {
                             default: "out",
                         },
                         random: false,
-                        speed: 0.3,
+                        speed: 0.5,
                         straight: true,
                     },
                     number: {
