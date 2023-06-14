@@ -38,7 +38,6 @@ export const NameLink = styled.span<{theme: string}>`
     margin-top: -5px;
     z-index: -1;
   }
-
 `
 
 //===================================//
