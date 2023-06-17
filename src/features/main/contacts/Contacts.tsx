@@ -14,6 +14,7 @@ import {NamePage} from "../../../common/components/nameBlock/NameBlock";
 import {TitlePage, Wrapper} from "../../../common/styles/Wrapper.styled";
 import {ButtonStyle} from "../../../common/components/button/Button.styled";
 import {ButtonsBlock, ContactItemsBlock, ErrorMessage, FormItem, FormStyle} from './Contacts.styled';
+import {EffectAnimation} from "../../../common/components/effectAnimation/EffectAnimation";
 
 
 export const Contacts = () => {
@@ -44,7 +45,7 @@ export const Contacts = () => {
                 });
             formik.resetForm()
             openModalHandler("text")
-           setTimeout(closeInfoModal, 7000)
+            setTimeout(closeInfoModal, 7000)
 
         }
     })
@@ -64,56 +65,65 @@ export const Contacts = () => {
     return (
         <Wrapper id={PATH.contacts}>
             <NamePage nameBlock={"CONTACTS"} svgImg={`${sprite}#mail`}/>
-            <TitlePage>
-                Let's Work <span>Together!</span>
-            </TitlePage>
 
-            <ContactItemsBlock>
-                <ContactItem icon={"location"} direction={"Minsk, Belarus"} callBack={() => openModalHandler("map")}/>
-                <ContactItem icon={"message"} direction={"slavaost-it@mail.ru"} href={"mailto: slavaost-it@mail.ru"}/>
-                <ContactItem icon={"phone"} direction={"+375 (29) 667-10-53"} href={"tel: +375296671053"}/>
-            </ContactItemsBlock>
+            <EffectAnimation>
+                <TitlePage>
+                    Let's Work <span>Together!</span>
+                </TitlePage>
+            </EffectAnimation>
+
+            <EffectAnimation direction={"right"}>
+                <ContactItemsBlock>
+                    <ContactItem icon={"location"} direction={"Minsk, Belarus"}
+                                 callBack={() => openModalHandler("map")}/>
+                    <ContactItem icon={"message"} direction={"slavaost-it@mail.ru"}
+                                 href={"mailto: slavaost-it@mail.ru"}/>
+                    <ContactItem icon={"phone"} direction={"+375 (29) 667-10-53"} href={"tel: +375296671053"}/>
+                </ContactItemsBlock>
+            </EffectAnimation>
 
 
             <FormStyle onSubmit={formik.handleSubmit}>
-                <FormItem>
-                    <label htmlFor={"from_name"}>FULL NAME <span>*</span></label>
-                    <input
-                        type={"text"}
-                        id={"from_name"}
-                        placeholder={"Your Full Name"}
-                        {...formik.getFieldProps("from_name")}
-                    />
+                <EffectAnimation direction={"left"}>
+                    <FormItem>
+                        <label htmlFor={"from_name"}>FULL NAME <span>*</span></label>
+                        <input
+                            type={"text"}
+                            id={"from_name"}
+                            placeholder={"Your Full Name"}
+                            {...formik.getFieldProps("from_name")}
+                        />
 
-                    {formik.touched.from_name && formik.errors.from_name &&
-                        <ErrorMessage>{formik.errors.from_name}</ErrorMessage>}
-                </FormItem>
+                        {formik.touched.from_name && formik.errors.from_name &&
+                            <ErrorMessage>{formik.errors.from_name}</ErrorMessage>}
+                    </FormItem>
 
-                <FormItem>
-                    <label> Email <span>*</span> </label>
-                    <input
-                        type={"text"}
-                        id={"reply_to"}
-                        placeholder={"Your email address"}
-                        {...formik.getFieldProps("reply_to")}
-                    />
+                    <FormItem>
+                        <label> Email <span>*</span> </label>
+                        <input
+                            type={"text"}
+                            id={"reply_to"}
+                            placeholder={"Your email address"}
+                            {...formik.getFieldProps("reply_to")}
+                        />
 
-                    {formik.touched.reply_to && formik.errors.reply_to &&
-                        <ErrorMessage>{formik.errors.reply_to}</ErrorMessage>}
-                </FormItem>
+                        {formik.touched.reply_to && formik.errors.reply_to &&
+                            <ErrorMessage>{formik.errors.reply_to}</ErrorMessage>}
+                    </FormItem>
 
 
-                <FormItem>
-                    <label> Message <span>*</span> </label>
-                    <textarea id={"message"}
-                              placeholder={"Write your message here"}
-                              autoComplete="off"
-                              {...formik.getFieldProps("message")}
-                    />
+                    <FormItem>
+                        <label> Message <span>*</span> </label>
+                        <textarea id={"message"}
+                                  placeholder={"Write your message here"}
+                                  autoComplete="off"
+                                  {...formik.getFieldProps("message")}
+                        />
 
-                    {formik.touched.message && formik.errors.message &&
-                        <ErrorMessage>{formik.errors.message}</ErrorMessage>}
-                </FormItem>
+                        {formik.touched.message && formik.errors.message &&
+                            <ErrorMessage>{formik.errors.message}</ErrorMessage>}
+                    </FormItem>
+                </EffectAnimation>
 
                 <ButtonsBlock>
                     <ButtonStyle

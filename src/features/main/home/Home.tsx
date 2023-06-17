@@ -7,7 +7,6 @@ import {PATH} from "../../../utils/routes/routes";
 import {Name, Prof} from "./Home.styled";
 import {Wrapper} from "../../../common/styles/Wrapper.styled";
 import {NamePage} from "../../../common/components/nameBlock/NameBlock";
-import {EffectAnimation} from "../../../common/components/effectAnimation/EffectAnimation";
 
 
 export const Home = () => {
@@ -18,9 +17,7 @@ export const Home = () => {
 
                 <Name>Hi, I'm <span>Slava</span>,
                     <br/>
-                    <EffectAnimation direction={"right"}>
-                        <Prof>Front-end Developer</Prof>
-                    </EffectAnimation>
+                    <Prof>Front-end Developer</Prof>
                 </Name>
 
                 <p>I'm a front-end developer and create beautiful and functional interfaces for web applications. I love

@@ -9,13 +9,13 @@ export const EffectAnimation:FC<EffectAnimationType> = ({direction,children}) =>
     return (
         <div
             data-aos={direction ? `fade-${direction}` : "fade-up"}
-            // data-aos-offset="100"
-            data-aos-delay="50"
-            data-aos-duration="1500"
+            data-aos-offset="200"
+            data-aos-delay="200"
+            data-aos-duration="1400"
             data-aos-easing="ease-in-out"
             data-aos-mirror="false"
             data-aos-once="false"
-            data-aos-anchor-placement="top-center"
+            // data-aos-anchor-placement="button-center"
         >
             {children}
         </div>

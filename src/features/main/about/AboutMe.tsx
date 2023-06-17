@@ -10,9 +10,7 @@ import {EffectAnimation} from "../../../common/components/effectAnimation/Effect
 export const AboutMe = () => {
     return (
         <Wrapper id={PATH.aboutMe}>
-            <EffectAnimation>
-                <NamePage nameBlock={"ABOUT ME"} svgImg={`${sprite}#man`}/>
-            </EffectAnimation>
+            <NamePage nameBlock={"ABOUT ME"} svgImg={`${sprite}#man`}/>
 
             <EffectAnimation>
                 <TitlePage>
