@@ -16,7 +16,7 @@ export const ToggleThemeBtn = ({themeValue, setTheme}: ToggleThemeBtnType) => {
                     Light
                 </NameTheme>
 
-                <Icon themeValue={themeValue === "light"}>
+                <Icon $themeValue={themeValue === "light"}>
                     <use xlinkHref={`${sprite}#sun`}/>
                 </Icon>
 
@@ -27,7 +27,7 @@ export const ToggleThemeBtn = ({themeValue, setTheme}: ToggleThemeBtnType) => {
                     Dark
                 </NameTheme>
 
-                <Icon themeValue={themeValue === "dark"}>
+                <Icon $themeValue={themeValue === "dark"}>
                     <use xlinkHref={`${sprite}#moon`}/>
                 </Icon>
             </SelectThemeBtn>

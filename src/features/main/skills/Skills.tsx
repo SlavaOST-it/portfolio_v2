@@ -2,17 +2,17 @@ import React from 'react';
 
 import sprite from "../../../assets/icons/sprite.svg";
 
-import {SkillItem} from "./skill/SkillItem";
-import {SkillsBlock} from './Skills.styled';
 import {PATH} from "../../../utils/routes/routes";
+
+import {SkillItem} from "./skill/SkillItem";
 import {NamePage} from "../../../common/components/nameBlock/NameBlock";
+
+import {SkillsBlock} from './Skills.styled';
 import {TitlePage, Wrapper} from "../../../common/styles/Wrapper.styled";
-import {FadeEffect} from "../../../common/components/fade/FadeEffect";
 
 
 export const Skills = () => {
     return (
-
         <Wrapper id={PATH.skills}>
 
                 <NamePage nameBlock={"SKILLS"} svgImg={`${sprite}#skills`}/>
@@ -32,8 +32,6 @@ export const Skills = () => {
                     <SkillItem idImgSkill={"postman"} nameSkill={"Postman"}/>
                     <SkillItem idImgSkill={"git"} nameSkill={"Git / GitHub"}/>
                 </SkillsBlock>
-
         </Wrapper>
-
     );
 };

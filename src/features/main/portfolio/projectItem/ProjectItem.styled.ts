@@ -41,14 +41,14 @@ export const DescriptionTitle = styled.div<{theme: string}>`
 
 // =======================================//
 type DescriptionType = {
-    show_styles_description: boolean
+    $show_styles_description: boolean
 }
 export const Description = styled.p<DescriptionType>`
   margin-top: 8px;
 
   p {
-    ${props => (props.show_styles_description ? 0 : 1)};
-    animation-name: ${(props) => (props.show_styles_description ? showDescription : hiddenDescription)};
+    ${props => (props.$show_styles_description ? 0 : 1)};
+    animation-name: ${(props) => (props.$show_styles_description ? showDescription : hiddenDescription)};
     animation-duration: 2s;
     animation-fill-mode: both;
   }

@@ -149,7 +149,7 @@ export const NavLinkMobile = styled(Link)<{theme: string}>`
 
 
 //===================================//
-export const MobileMenuStyle = styled.div<{ isOpen: boolean, theme: string}>`
+export const MobileMenuStyle = styled.div<{ $is_open: boolean, theme: string}>`
   display: none;
 
   .overlay {
@@ -160,11 +160,10 @@ export const MobileMenuStyle = styled.div<{ isOpen: boolean, theme: string}>`
     height: 100%;
     background-color: rgba(133, 133, 133, 0.62);
     z-index: 90;
-    display: ${({isOpen}) => (isOpen ? 'block' : 'none')};
+    display: ${({$is_open}) => ($is_open ? 'block' : 'none')};
   }
 
   @media screen and ${props => props.theme.media.desktop} {
     display: block;
   }
-
 `

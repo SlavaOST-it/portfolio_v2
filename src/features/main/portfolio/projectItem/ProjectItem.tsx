@@ -56,7 +56,7 @@ export const ProjectItem: FC<ProjectItemType> = ({title, img, href, description,
                     </DescriptionTitle>
                 </TitleProject>
 
-                <Description show_styles_description={showStyleDescription}>
+                <Description $show_styles_description={showStyleDescription}>
                     {showDescription && <p>{description}</p>}
                 </Description>
             </div>

@@ -2,9 +2,13 @@ import styled from "styled-components";
 import {dotLoader, dotsLoader, hiddenDescription} from "../../styles/animations/Animation";
 
 
-
-export const Gooey = styled.div<{hide_loader_style: boolean, is_close: boolean, theme: string}>`
-  display: ${({is_close}) => (is_close ? 'flex' : 'none')};
+type GooeyType = {
+    $hide_loader_style: boolean,
+    $is_close: boolean,
+    theme: string
+}
+export const Gooey = styled.div<GooeyType>`
+  display: ${({$is_close}) => ($is_close ? 'flex' : 'none')};
   align-items: center;
   justify-content: center;
   
@@ -19,7 +23,7 @@ export const Gooey = styled.div<{hide_loader_style: boolean, is_close: boolean, 
   
   filter: contrast(20);
   
-  animation-name: ${({hide_loader_style}) => (hide_loader_style && hiddenDescription)};
+  animation-name: ${({$hide_loader_style}) => ($hide_loader_style && hiddenDescription)};
   animation-duration: 1.5s;
   animation-fill-mode: both;
 `

@@ -1,7 +1,5 @@
 import React, {FC, useEffect, useRef, useState} from 'react';
 
-import {SocialLinks} from "../leftSidebar/LeftSidebar";
-
 import {linksMenu, linksMobileMenuSVG} from "../../common/components/links/links";
 
 import {
@@ -19,6 +17,7 @@ import {
     NavLinkMobile,
     SocialLinksBlock
 } from "./MobileMenu.styled";
+import {SocialLinks} from "../leftSidebar/socialLinks/SocialLinks";
 import {ToggleThemeBtn} from "../../common/components/toggleThemeBtn/ToggleThemeBtn";
 
 
@@ -45,7 +44,7 @@ export const MobileMenu: FC<MobileMenuType> = ({themeValue, setTheme}) => {
     }, [menuRef]);
 
     return (
-        <MobileMenuStyle isOpen={isOpen} ref={menuRef}>
+        <MobileMenuStyle $is_open={isOpen} ref={menuRef}>
             <div className="overlay" onClick={() => setIsOpen(false)}/>
 
             {!isOpen && (<BurgerButton

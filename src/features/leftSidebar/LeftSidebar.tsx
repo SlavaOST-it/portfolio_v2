@@ -1,12 +1,13 @@
-import React, {FC} from 'react';
+import React from 'react';
 import {animateScroll as scroll} from "react-scroll";
 
 import avatar from "../../assets/images/me.jpg"
 import sprite from "../../assets/icons/sprite.svg"
 
-import {ButtonStyle} from "../../common/components/button/Button";
+import {ButtonStyle} from "../../common/components/button/Button.styled";
 import {linksLeftSideBarSVG} from "../../common/components/links/links";
-import {Avatar, Description, Header, LeftSideBarWrapper, SocialLinksStyled} from './LeftSidebar.styled';
+import {Avatar, Description, Header, LeftSideBarWrapper} from './LeftSidebar.styled';
+import {SocialLinks} from "./socialLinks/SocialLinks";
 
 
 export const LeftSidebar = () => {
@@ -41,30 +42,3 @@ export const LeftSidebar = () => {
 };
 
 
-type SocialLinksType = {
-    linksSVG: Array<
-        {
-            title: string,
-            logoLink: string,
-            href: string
-        }>,
-    sizeSVG?: string,
-    border?: boolean
-}
-export const SocialLinks: FC<SocialLinksType> = ({linksSVG,sizeSVG,border}) => {
-    return (
-        <SocialLinksStyled sizeSVG={sizeSVG ?? ""} border={!!border}>
-            <ul>
-                {linksSVG.map(el =>
-                    <li key={el.logoLink}>
-                        <a href={el.href} target={"_blank"} rel="noreferrer">
-                            <svg>
-                                <use xlinkHref={el.logoLink}/>
-                            </svg>
-                        </a>
-                    </li>
-                )}
-            </ul>
-        </SocialLinksStyled>
-    )
-}

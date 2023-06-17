@@ -16,7 +16,7 @@ type InfoModalProps = {
 export const Modal: FC<InfoModalProps> = ({isOpen, onClose, children, showStyleModal}) => {
     return modalRoot
         ? ReactDOM.createPortal(
-            <ModalOverlay is_open={isOpen} show_styles_modal={showStyleModal}>
+            <ModalOverlay $is_open={isOpen} $show_styles_modal={showStyleModal}>
                 <div className="overlay" onClick={onClose}/>
                 <ModalWrapper>
                     <CloseButton onClick={onClose}>&times;</CloseButton>

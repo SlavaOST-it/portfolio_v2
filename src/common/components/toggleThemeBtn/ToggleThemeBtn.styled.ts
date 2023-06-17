@@ -5,13 +5,13 @@ import styled from "styled-components";
 // ===============================//
 type IconProps = {
     theme: string;
-    themeValue: boolean;
+    $themeValue: boolean;
 }
 export const Icon = styled.svg<IconProps>`
   width: 20px;
   height: 20px;
   fill: ${props =>
-    props.themeValue
+    props.$themeValue
         ? `${props.theme.colors.activeColor.primary_color}`
         : `${props.theme.colors.secondary}`};
 `

@@ -3,11 +3,11 @@ import {hiddenDescription, showDescription} from "../../styles/animations/Animat
 
 
 type ModalOverlayType = {
-    is_open: boolean,
-    show_styles_modal: boolean
+    $is_open: boolean,
+    $show_styles_modal: boolean
 }
 export const ModalOverlay = styled.div<ModalOverlayType>`
-  display: ${props => (props.is_open ? 'flex' : 'none')};
+  display: ${props => (props.$is_open ? 'flex' : 'none')};
   justify-content: center;
   align-items: center;
   
@@ -19,8 +19,8 @@ export const ModalOverlay = styled.div<ModalOverlayType>`
   height: 100%;
   padding: 10px;
 
-  opacity: ${props => (props.show_styles_modal ? 0 : 1)};
-  animation-name: ${(props) => (props.show_styles_modal ? showDescription : hiddenDescription)};
+  opacity: ${props => (props.$show_styles_modal ? 0 : 1)};
+  animation-name: ${(props) => (props.$show_styles_modal ? showDescription : hiddenDescription)};
   animation-duration: 2s;
   animation-fill-mode: both;
 
@@ -34,7 +34,7 @@ export const ModalOverlay = styled.div<ModalOverlayType>`
     height: 100%;
     background-color: rgba(133, 133, 133, 0.62);
     z-index: 90;
-    display: ${({is_open}) => (is_open ? 'block' : 'none')};
+    display: ${({$is_open}) => ($is_open ? 'block' : 'none')};
   }
 `
 
