@@ -25,7 +25,7 @@ export const Portfolio = () => {
 
             <div>
                 {projects.map((el, index) =>
-                    <EffectAnimation>
+                    <EffectAnimation key={index}>
                         <ProjectItem
                             key={index}
                             img={el.img}

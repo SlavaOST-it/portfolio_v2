@@ -46,12 +46,18 @@ export const NameTheme = styled.span<{theme: string}>`
     margin-top: -5px;
     z-index: -1;
   }
+
+  @media screen and ${props => props.theme.media.tablet} {
+    display: none;
+  }
+  
 `
 
 // ===============================//
 export const SelectThemeBtn = styled.button`
   position: relative;
 
+  margin-top: 4px;
   border: none;
   background: none;
 

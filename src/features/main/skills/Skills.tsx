@@ -39,7 +39,7 @@ export const Skills = () => {
                         <SkillItem idImgSkill={"test"} nameSkill={"Unit tests"}/>
                     </EffectAnimation>
                     <SkillItem idImgSkill={"postman"} nameSkill={"Postman"}/>
-                    <EffectAnimation direction={"left"}>
+                    <EffectAnimation>
                         <SkillItem idImgSkill={"git"} nameSkill={"Git / GitHub"}/>
                     </EffectAnimation>
                 </SkillsBlock>

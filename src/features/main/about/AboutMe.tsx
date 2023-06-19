@@ -31,7 +31,11 @@ export const AboutMe = () => {
                     design and can work in a team with
                     designers to create
                     better visual solutions for
-                    users. I am constantly learning
+                    users.
+                </p>
+
+                <p>
+                    I am constantly learning
                     new technologies and tools,
                     to stay abreast of the latest
                     trends in my field and

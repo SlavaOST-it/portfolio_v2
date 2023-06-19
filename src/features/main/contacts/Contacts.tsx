@@ -72,7 +72,7 @@ export const Contacts = () => {
                 </TitlePage>
             </EffectAnimation>
 
-            <EffectAnimation direction={"right"}>
+            <EffectAnimation>
                 <ContactItemsBlock>
                     <ContactItem icon={"location"} direction={"Minsk, Belarus"}
                                  callBack={() => openModalHandler("map")}/>
@@ -84,7 +84,7 @@ export const Contacts = () => {
 
 
             <FormStyle onSubmit={formik.handleSubmit}>
-                <EffectAnimation direction={"left"}>
+                <EffectAnimation>
                     <FormItem>
                         <label htmlFor={"from_name"}>FULL NAME <span>*</span></label>
                         <input
