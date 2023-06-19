@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const ErrorMessage = styled.p`
   color: red;
   font-size: 14px;
+  max-width: 100px;
 `
 
 // ==============================//
@@ -46,7 +47,7 @@ export const FormItem = styled.div<{theme: string}>`
 
   textarea {
     font-family: 'Inter', sans-serif;
-    min-width: 100%;
+    max-width: 100%;
     height: 150px;
     resize: none;
     border-bottom: 0.5px solid ${props => props.theme.colors.secondary};
@@ -55,7 +56,6 @@ export const FormItem = styled.div<{theme: string}>`
   input:focus, textarea:focus {
     outline: none;
   }
-  
 `
 
 // ==============================//
@@ -71,7 +71,6 @@ export const ButtonsBlock = styled.div`
   max-width: 100%;
   
   gap: 15px;
-  
 `
 
 

@@ -37,15 +37,15 @@ export const Contacts = () => {
 
         }),
         onSubmit: (values) => {
-            emailJs.send(process.env.REACT_APP_FORMIK_SERVICE_ID!, process.env.REACT_APP_FORMIK_TEMPLATE_ID!, values, process.env.REACT_APP_FORMIK_USER_ID)
-                .then((result: any) => {
-                    console.log(result.text);
-                }, (error: any) => {
-                    console.log(error.text);
-                });
+            // emailJs.send(process.env.REACT_APP_FORMIK_SERVICE_ID!, process.env.REACT_APP_FORMIK_TEMPLATE_ID!, values, process.env.REACT_APP_FORMIK_USER_ID)
+            //     .then((result: any) => {
+            //         console.log(result.text);
+            //     }, (error: any) => {
+            //         console.log(error.text);
+            //     });
             formik.resetForm()
             openModalHandler("text")
-            setTimeout(closeInfoModal, 7000)
+            setTimeout(()=>closeInfoModal("text"), 6000)
 
         }
     })
@@ -164,7 +164,7 @@ export const Contacts = () => {
                     title={"map"}
                     src="https://yandex.by/map-widget/v1/?ll=31.400540%2C53.545690&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzAwMDExNxIc0JHQtdC70LDRgNGD0YHRjCwg0JzRltC90YHQuiIKDQ5y3EEVZpxXQg%2C%2C&z=5.69"
                     width="100%" height="100%" frameBorder="1" allowFullScreen={true}
-                    style={{position: "relative", borderRadius: "50px"}}>
+                    style={{position: "relative", borderRadius: "36px"}}>
 
                 </iframe>
             </Modal>

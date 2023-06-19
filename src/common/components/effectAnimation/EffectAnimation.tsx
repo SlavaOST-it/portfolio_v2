@@ -15,7 +15,6 @@ export const EffectAnimation:FC<EffectAnimationType> = ({direction,children}) =>
             data-aos-easing="ease-in-out"
             data-aos-mirror="false"
             data-aos-once="false"
-            // data-aos-anchor-placement="button-center"
         >
             {children}
         </div>
