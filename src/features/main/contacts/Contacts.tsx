@@ -37,12 +37,12 @@ export const Contacts = () => {
 
         }),
         onSubmit: (values) => {
-            // emailJs.send(process.env.REACT_APP_FORMIK_SERVICE_ID!, process.env.REACT_APP_FORMIK_TEMPLATE_ID!, values, process.env.REACT_APP_FORMIK_USER_ID)
-            //     .then((result: any) => {
-            //         console.log(result.text);
-            //     }, (error: any) => {
-            //         console.log(error.text);
-            //     });
+            emailJs.send(process.env.REACT_APP_FORMIK_SERVICE_ID!, process.env.REACT_APP_FORMIK_TEMPLATE_ID!, values, process.env.REACT_APP_FORMIK_USER_ID)
+                .then((result: any) => {
+                    console.log(result.text);
+                }, (error: any) => {
+                    console.log(error.text);
+                });
             formik.resetForm()
             openModalHandler("text")
             setTimeout(()=>closeInfoModal("text"), 6000)
