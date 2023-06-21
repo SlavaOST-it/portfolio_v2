@@ -32,7 +32,7 @@ export const Avatar = styled.img`
 `
 
 // =======================//
-export const Description = styled.section`
+export const Description = styled.section<{theme: string}>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,11 +54,10 @@ export const Description = styled.section`
   p {
     margin-bottom: 25px;
     font-size: 14px;
-    color: ${darkTheme.colors.secondary};
+    //color: ${darkTheme.colors.secondary};
+    color: ${props=>props.theme.colors.secondary};
   }
 `
-
-// =======================//
 
 // =======================//
 export const LeftSideBarWrapper = styled.aside<{theme: string}>`

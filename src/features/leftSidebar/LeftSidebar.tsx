@@ -4,10 +4,11 @@ import {animateScroll as scroll} from "react-scroll";
 import avatar from "../../assets/images/me.jpg"
 import sprite from "../../assets/icons/sprite.svg"
 
+import {SocialLinks} from "./socialLinks/SocialLinks";
+
 import {ButtonStyle} from "../../common/components/button/Button.styled";
 import {linksLeftSideBarSVG} from "../../common/components/links/links";
 import {Avatar, Description, Header, LeftSideBarWrapper} from './LeftSidebar.styled';
-import {SocialLinks} from "./socialLinks/SocialLinks";
 
 
 export const LeftSidebar = () => {

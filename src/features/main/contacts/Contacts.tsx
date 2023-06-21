@@ -10,11 +10,11 @@ import {PATH} from "../../../utils/routes/routes";
 import {ContactItem} from "./contactItem/ContactItem";
 import {Modal} from "../../../common/components/infoModal/Modal";
 import {NamePage} from "../../../common/components/nameBlock/NameBlock";
+import {EffectAnimation} from "../../../common/components/effectAnimation/EffectAnimation";
 
 import {TitlePage, Wrapper} from "../../../common/styles/Wrapper.styled";
 import {ButtonStyle} from "../../../common/components/button/Button.styled";
 import {ButtonsBlock, ContactItemsBlock, ErrorMessage, FormItem, FormStyle} from './Contacts.styled';
-import {EffectAnimation} from "../../../common/components/effectAnimation/EffectAnimation";
 
 
 export const Contacts = () => {
