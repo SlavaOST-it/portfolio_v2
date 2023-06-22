@@ -1,4 +1,4 @@
-import React, {FC, useState} from "react";
+import React, {FC, useEffect, useState} from "react";
 import {
     BodyProject, Description,
     DescriptionTitle,
@@ -22,6 +22,8 @@ export const ProjectItem: FC<ProjectItemType> = ({title, img, href, description,
     const [showDescription, setShowDescription] = useState(false)
     const [showStyleDescription, setShowStyleDescription] = useState(false)
 
+    let timerId: NodeJS.Timeout
+
     const onClickDescriptionHandler = (showDescription: boolean) => {
         if (!showDescription) {
             setShowDescription(true)
@@ -29,9 +31,13 @@ export const ProjectItem: FC<ProjectItemType> = ({title, img, href, description,
         }
         if (showDescription) {
             setShowStyleDescription(false)
-            setTimeout(() => setShowDescription(false), 2000)
+            timerId = setTimeout(() => setShowDescription(false), 2000)
         }
     }
+
+    useEffect(() => {
+        clearTimeout(timerId)
+    }, [showDescription,showStyleDescription])
 
     return (
         <ProjectWrapper>
@@ -57,10 +63,9 @@ export const ProjectItem: FC<ProjectItemType> = ({title, img, href, description,
                 </TitleProject>
 
                 <Description $show_styles_description={showStyleDescription}>
-                    {showDescription && <p>{description}</p>}
+                    {showDescription && <>{description}</>}
                 </Description>
             </div>
-
         </ProjectWrapper>
     )
 }

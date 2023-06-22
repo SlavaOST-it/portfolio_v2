@@ -1,7 +1,4 @@
-import React, {useState} from 'react';
-import * as Yup from 'yup';
-import {useFormik} from 'formik';
-import emailJs from '@emailjs/browser';
+import React from 'react';
 
 import sprite from "../../../assets/icons/sprite.svg";
 
@@ -15,52 +12,18 @@ import {EffectAnimation} from "../../../common/components/effectAnimation/Effect
 import {TitlePage, Wrapper} from "../../../common/styles/Wrapper.styled";
 import {ButtonStyle} from "../../../common/components/button/Button.styled";
 import {ButtonsBlock, ContactItemsBlock, ErrorMessage, FormItem, FormStyle} from './Contacts.styled';
+import {useContacts} from "./useContact/useContacts";
 
 
 export const Contacts = () => {
-    const [openModal, setOpenModal] = useState(false)
-    const [showStyleModal, setShowStyleModal] = useState(false)
-
-    const [openMapModal, setOpenMapModal] = useState(false)
-
-    const formik = useFormik({
-        initialValues: {
-            from_name: '',
-            reply_to: '',
-            message: ''
-        },
-        validationSchema: Yup.object({
-            from_name: Yup.string().required('* Name field is required'),
-            reply_to: Yup.string().email('Invalid email address').matches(/^[^@]+@[^@]+\.[^@]+$/, 'Invalid email address')
-                .required('* Email field is required'),
-            message: Yup.string().required('* Message field is required')
-
-        }),
-        onSubmit: (values) => {
-            emailJs.send(process.env.REACT_APP_FORMIK_SERVICE_ID!, process.env.REACT_APP_FORMIK_TEMPLATE_ID!, values, process.env.REACT_APP_FORMIK_USER_ID)
-                .then((result: any) => {
-                    console.log(result.text);
-                }, (error: any) => {
-                    console.log(error.text);
-                });
-            formik.resetForm()
-            openModalHandler("text")
-            setTimeout(()=>closeInfoModal("text"), 6000)
-
-        }
-    })
-
-    const openModalHandler = (value: "text" | "map") => {
-        value === "text" ? setOpenModal(true) : setOpenMapModal(true)
-        setShowStyleModal(true)
-    }
-
-    const closeInfoModal = (value: "text" | "map") => {
-        value === "text"
-            ? setTimeout(() => setOpenModal(false), 2000)
-            : setTimeout(() => setOpenMapModal(false), 2000)
-        setShowStyleModal(false)
-    }
+    const {
+        formik,
+        openModal,
+        showStyleModal,
+        openMapModal,
+        openModalHandler,
+        closeInfoModal
+    } = useContacts()
 
     return (
         <Wrapper id={PATH.contacts}>

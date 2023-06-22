@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {ThemeProvider} from "styled-components";
 
 import {AppWrapper} from "./App.styled";
@@ -13,23 +13,11 @@ import {Preloader} from "../common/components/preloader/Preloader";
 import {GlobalStyled} from '../common/styles/GlobalStyles.styled';
 import {darkTheme, lightTheme} from '../common/styles/Theme.styled';
 
+import {useAppSwitchTheme} from "./useAppSwitchTheme/useAppSwitchTheme";
+
 
 export const App = () => {
-    const [theme, setTheme] = useState("dark");
-
-    useEffect(() => {
-        const storedThemeValue = localStorage.getItem('currentThemeApp');
-
-        if (storedThemeValue) {
-            setTheme(storedThemeValue);
-        }
-    }, []);
-
-    const switchTheme = (themeValue: "light" | "dark") => {
-        const newTheme = themeValue === "dark" ? "light" : "dark";
-        setTheme(newTheme);
-        localStorage.setItem('currentThemeApp', newTheme);
-    };
+    const {theme, switchTheme} = useAppSwitchTheme()
 
     return (
         <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>

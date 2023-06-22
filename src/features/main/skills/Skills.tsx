@@ -14,7 +14,6 @@ import {EffectAnimation} from "../../../common/components/effectAnimation/Effect
 
 export const Skills = () => {
     return (
-
         <Wrapper id={PATH.skills}>
             <NamePage nameBlock={"SKILLS"} svgImg={`${sprite}#skills`}/>
 

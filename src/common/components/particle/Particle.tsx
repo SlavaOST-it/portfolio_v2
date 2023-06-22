@@ -9,13 +9,10 @@ export const Particle = () => {
         await loadFull(engine);
     }, []);
 
-    // const particlesLoaded = useCallback(async (container: Container | undefined) => {
-    // }, []);
     return (
         <Particles
             id="tsparticles"
             init={particlesInit}
-            // loaded={particlesLoaded}
             options={{
                 fpsLimit: 120,
                 interactivity: {

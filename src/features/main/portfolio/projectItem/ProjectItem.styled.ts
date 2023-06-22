@@ -46,12 +46,12 @@ type DescriptionType = {
 export const Description = styled.p<DescriptionType>`
   margin-top: 8px;
 
-  p {
-    ${props => (props.$show_styles_description ? 0 : 1)};
-    animation-name: ${(props) => (props.$show_styles_description ? showDescription : hiddenDescription)};
-    animation-duration: 2s;
-    animation-fill-mode: both;
-  }
+  
+  ${props => (props.$show_styles_description ? 0 : 1)};
+  animation-name: ${(props) => (props.$show_styles_description ? showDescription : hiddenDescription)};
+  animation-duration: 2s;
+  animation-fill-mode: both;
+
 `
 
 // =======================================//

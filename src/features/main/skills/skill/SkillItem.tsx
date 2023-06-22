@@ -9,7 +9,6 @@ type SkillType = {
     nameSkill: string
 }
 export const SkillItem: FC<SkillType> = ({idImgSkill, nameSkill}) => {
-
     return (
         <SkillBlock>
             <CircleSkill>
